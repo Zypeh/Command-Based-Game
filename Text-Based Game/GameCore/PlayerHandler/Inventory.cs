@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using Text_Based_Game.StringHandler;
 
 namespace Text_Based_Game.GameCore.PlayerHandler
 {
     class Inventory
     {
+        public string[] item = new string[StringHandler.Reference.InventoryTotalSlot];
         /// <summary>
         /// Gets the info of the item according to the slot. 
         /// Type 0 gets item name, type 1 gets item amount.
@@ -17,7 +17,7 @@ namespace Text_Based_Game.GameCore.PlayerHandler
         /// <param name="type"></param>
         public static string getItemInfoFromSlot(int slot, int type)
         {
-
+            return String.Empty;
         }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace Text_Based_Game.GameCore.PlayerHandler
         /// </summary>
         public static int getSlotFromName()
         {
-
+            return 0;
         }
 
 

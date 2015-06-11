@@ -18,5 +18,10 @@ namespace Text_Based_Game
                 Console.WriteLine(CommandHandler.handleCommand(Console.ReadLine()));
             } 
         }
+
+        public static void print(string input)
+        {
+            Console.WriteLine(input);
+        }
     }
 }

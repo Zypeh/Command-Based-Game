@@ -45,6 +45,10 @@
     <Compile Include="GameCore\CommandHandlerCore\Help.cs" />
     <Compile Include="GameCore\PlayerHandler\Inventory.cs" />
     <Compile Include="GameCore\PlayerHandler\Status.cs" />
+    <Compile Include="GameCore\WorldHandlerCore\AnimalGen.cs" />
+    <Compile Include="GameCore\WorldHandlerCore\MonsterGen.cs" />
+    <Compile Include="GameCore\WorldHandlerCore\WorldGen.cs" />
+    <Compile Include="GameCore\WorldHandlerCore\WorldHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringHandler\Language.cs" />

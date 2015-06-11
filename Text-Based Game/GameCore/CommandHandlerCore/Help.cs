@@ -9,17 +9,20 @@ namespace Text_Based_Game.GameCore.CommandHandlerCore
 {
     class Help
     {
+        
         public static string command()
         {
+            Help lang = new Help();
+
             string result = "";
             if (Language.lang == "en_US")
             {
-                result = enUS() + Environment.NewLine;
+                result = lang.enUS() + Environment.NewLine;
             }
             return result;
         }
 
-        public static string enUS()
+        public string enUS()
         {
             return "" // well, OCD :)
             + "Command List"
@@ -30,7 +33,7 @@ namespace Text_Based_Game.GameCore.CommandHandlerCore
             + Environment.NewLine
             + "check surrounding -- Shows everything that surrounds you."
             + Environment.NewLine
-            + "player [health/hunger] -- Shows the health of the Player/Shows how hungry is the Player."
+            + "player [health/hunger] -- Shows the health of the Player / Shows how hungry is the Player."
             + Environment.NewLine
             + "";
         }
