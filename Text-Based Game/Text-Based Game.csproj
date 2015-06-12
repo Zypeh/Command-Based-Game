@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="GameCore\CommandHandlerCore\CommandHandler.cs" />
     <Compile Include="GameCore\CommandHandlerCore\Help.cs" />
+    <Compile Include="GameCore\ItemHandler\Item.cs" />
     <Compile Include="GameCore\PlayerHandler\Inventory.cs" />
     <Compile Include="GameCore\PlayerHandler\Status.cs" />
     <Compile Include="GameCore\WorldHandlerCore\AnimalGen.cs" />

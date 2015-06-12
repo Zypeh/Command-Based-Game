@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Text_Based_Game.GameCore.CommandHandlerCore;
 
 /*
- * The whole class is just redirecting the command to another class's method
+ * The whole class is just redirecting the command to another class
  * Yep, it's gonna be redirected two times. From here to the language-detector class, then finally to the command class.
  * 
  * Do not ask me why.

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Text_Based_Game.StringHandler;
 
 namespace Text_Based_Game.GameCore.CommandHandlerCore
@@ -35,7 +33,7 @@ namespace Text_Based_Game.GameCore.CommandHandlerCore
             + Environment.NewLine
             + "player [health/hunger] -- Shows the health of the Player / Shows how hungry is the Player."
             + Environment.NewLine
-            + "";
+            + "go to [location] -- Goes to different location, uses actions according to the distance.";
         }
     }
 }
