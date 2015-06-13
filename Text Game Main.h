@@ -26,10 +26,10 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
-#include <wx/textctrl.h>
-#include <wx/richtext/richtextctrl.h>
-#include <wx/panel.h>
+#include <wx/filedlg.h>
 #include <wx/menu.h>
+#include <wx/textctrl.h>
+#include <wx/panel.h>
 #include <wx/sizer.h>
 ////Header Include End
 
@@ -57,11 +57,12 @@ class Text_GameFrm : public wxFrame
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
+		wxFileDialog *SaveFile;
+		wxMenuBar *WxMenuBar1;
 		wxTextCtrl *WxEdit1;
-		wxRichTextCtrl *WxRichTextCtrl1;
+		wxTextCtrl *WxMemo1;
 		wxBoxSizer *WxBoxSizer2;
 		wxPanel *WxPanel1;
-		wxMenuBar *WxMenuBar1;
 		wxBoxSizer *WxBoxSizer1;
 		////GUI Control Declaration End
 		
@@ -73,14 +74,14 @@ class Text_GameFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
-			ID_WXEDIT1 = 1039,
-			ID_WXRICHTEXTCTRL1 = 1038,
-			ID_WXPANEL1 = 1036,
 			ID_MNU_MENUITEM1_1014 = 1014,
 			ID_MNU_SAVE____1015 = 1015,
 			ID_MNU_LOAD____1016 = 1016,
 			ID_MNU_ABOUT_1017 = 1017,
 			
+			ID_WXEDIT1 = 1039,
+			ID_WXMEMO1 = 1040,
+			ID_WXPANEL1 = 1036,
 			////GUI Enum Control ID End
 			ID_DUMMY_VALUE_ //don't remove this value unless you have other enum values
 		};

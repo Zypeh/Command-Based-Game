@@ -55,6 +55,25 @@ void Text_GameFrm::CreateGUIControls()
 	this->SetSizer(WxBoxSizer1);
 	this->SetAutoLayout(true);
 
+	WxPanel1 = new wxPanel(this, ID_WXPANEL1, wxPoint(0, 0), wxSize(330, 330));
+	WxBoxSizer1->Add(WxPanel1, 1, wxALIGN_CENTER | wxEXPAND | wxALL, 0);
+
+	WxBoxSizer2 = new wxBoxSizer(wxVERTICAL);
+	WxPanel1->SetSizer(WxBoxSizer2);
+	WxPanel1->SetAutoLayout(true);
+
+	WxMemo1 = new wxTextCtrl(WxPanel1, ID_WXMEMO1, wxEmptyString, wxPoint(5, 5), wxSize(185, 89), wxTE_READONLY | wxTE_LEFT | wxTE_MULTILINE, wxDefaultValidator, _("WxMemo1"));
+	WxMemo1->SetMaxLength(0);
+	WxMemo1->Enable(false);
+	WxMemo1->AppendText(_("WxMemo1"));
+	WxMemo1->SetFocus();
+	WxMemo1->SetInsertionPointEnd();
+	WxBoxSizer2->Add(WxMemo1, 1, wxALIGN_CENTER | wxEXPAND | wxALL, 5);
+
+	WxEdit1 = new wxTextCtrl(WxPanel1, ID_WXEDIT1, _("Type here"), wxPoint(37, 104), wxSize(121, 25), 0, wxDefaultValidator, _("WxEdit1"));
+	WxEdit1->SetFont(wxFont(10, wxSWISS, wxNORMAL, wxNORMAL, false));
+	WxBoxSizer2->Add(WxEdit1, 0, wxALIGN_CENTER | wxEXPAND | wxALL, 5);
+
 	WxMenuBar1 = new wxMenuBar();
 	wxMenu *ID_MNU_MENUITEM1_1014_Mnu_Obj = new wxMenu();
 	ID_MNU_MENUITEM1_1014_Mnu_Obj->Append(ID_MNU_SAVE____1015, _("Save..."), _(""), wxITEM_NORMAL);
@@ -65,24 +84,7 @@ void Text_GameFrm::CreateGUIControls()
 	WxMenuBar1->Append(ID_MNU_ABOUT_1017_Mnu_Obj, _("About"));
 	SetMenuBar(WxMenuBar1);
 
-	WxPanel1 = new wxPanel(this, ID_WXPANEL1, wxPoint(0, 0), wxSize(330, 330));
-	WxBoxSizer1->Add(WxPanel1, 1, wxALIGN_CENTER | wxEXPAND | wxALL, 0);
-
-	WxBoxSizer2 = new wxBoxSizer(wxVERTICAL);
-	WxPanel1->SetSizer(WxBoxSizer2);
-	WxPanel1->SetAutoLayout(true);
-
-	WxRichTextCtrl1 = new wxRichTextCtrl(WxPanel1, ID_WXRICHTEXTCTRL1, _(""), wxPoint(5, 5), wxSize(320, 290), 0, wxDefaultValidator, _("WxRichTextCtrl1"));
-	WxRichTextCtrl1->SetMaxLength(0);
-	WxRichTextCtrl1->AppendText(_("WxRichTextCtrl1"));
-	WxRichTextCtrl1->SetFocus();
-	WxRichTextCtrl1->SetInsertionPointEnd();
-	WxRichTextCtrl1->SetFont(wxFont(10, wxSWISS, wxNORMAL, wxNORMAL, false));
-	WxBoxSizer2->Add(WxRichTextCtrl1, 1, wxALIGN_CENTER | wxEXPAND | wxLEFT | wxRIGHT | wxTOP, 5);
-
-	WxEdit1 = new wxTextCtrl(WxPanel1, ID_WXEDIT1, _("Type here"), wxPoint(104, 300), wxSize(121, 25), 0, wxDefaultValidator, _("WxEdit1"));
-	WxEdit1->SetFont(wxFont(10, wxSWISS, wxNORMAL, wxNORMAL, false));
-	WxBoxSizer2->Add(WxEdit1, 0, wxALIGN_CENTER | wxEXPAND | wxALL, 5);
+	SaveFile =  new wxFileDialog(this, _("Save your game"), _(""), _(""), _("*.json*"), wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxFD_CHANGE_DIR);
 
 	SetTitle(_("Text Game"));
 	SetIcon(wxNullIcon);
@@ -119,15 +121,34 @@ void Text_GameFrm::AboutClick(wxCommandEvent& event)
 /*
  * OnSave
  */
-void Text_GameFrm::OnSave(wxCommandEvent& event)
+void Text_GameFrm::OnSave(wxCommandEvent& WXUNUSED(event))
 {
-	// insert your code here
+	wxFileDialog
+	   saveFileDialog(this, _("Save game file"), "", "",
+                      "JSON files (*json)|*.json",
+                      wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
+    
+    //Do saving code here               
+    if (saveFileDialog.ShowModal() == wxID_CANCEL)
+        return;
+
+    //Need saving validation
 }
 
 /*
  * OnLoad
  */
-void Text_GameFrm::OnLoad(wxCommandEvent& event)
+void Text_GameFrm::OnLoad(wxCommandEvent& WXUNUSED(event))
 {
-	// insert your code here
+    wxFileDialog 
+        openFileDialog(this, _("Load game file"), "", "",
+                       "JSON files (*.json)|*.json", 
+                       wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+                       
+    //Do loading code here
+    if (openFileDialog.ShowModal() == wxID_CANCEL)
+        return;
+        
+    //Need loading validation, goto "http://docs.wxwidgets.org/trunk/classwx_file_dialog.html"
 }
+
