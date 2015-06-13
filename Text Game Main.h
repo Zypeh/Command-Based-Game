@@ -26,16 +26,16 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
-#include <wx/richtext/richtextctrl.h>
 #include <wx/textctrl.h>
-#include <wx/menu.h>
+#include <wx/richtext/richtextctrl.h>
 #include <wx/panel.h>
+#include <wx/menu.h>
 #include <wx/sizer.h>
 ////Header Include End
 
 ////Dialog Style Start
 #undef Text_GameFrm_STYLE
-#define Text_GameFrm_STYLE wxCAPTION | wxSYSTEM_MENU | wxMINIMIZE_BOX | wxCLOSE_BOX
+#define Text_GameFrm_STYLE wxCAPTION | wxRESIZE_BORDER | wxSYSTEM_MENU | wxMINIMIZE_BOX | wxMAXIMIZE_BOX | wxCLOSE_BOX | wxFRAME_SHAPED
 ////Dialog Style End
 
 class Text_GameFrm : public wxFrame
@@ -47,16 +47,21 @@ class Text_GameFrm : public wxFrame
 		Text_GameFrm(wxWindow *parent, wxWindowID id = 1, const wxString &title = wxT("Text Game"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = Text_GameFrm_STYLE);
 		virtual ~Text_GameFrm();
 		void CloseClick(wxCommandEvent& event);
+		void AboutClick(wxCommandEvent& event);
+		void Mnumenuitem11014Click(wxCommandEvent& event);
+		void OnSave(wxCommandEvent& event);
+		void OnLoad(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
-		wxRichTextCtrl *WxRichTextCtrl1;
 		wxTextCtrl *WxEdit1;
-		wxMenuBar *WxMenuBar1;
+		wxRichTextCtrl *WxRichTextCtrl1;
+		wxBoxSizer *WxBoxSizer2;
 		wxPanel *WxPanel1;
+		wxMenuBar *WxMenuBar1;
 		wxBoxSizer *WxBoxSizer1;
 		////GUI Control Declaration End
 		
@@ -68,14 +73,14 @@ class Text_GameFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
-			ID_WXRICHTEXTCTRL1 = 1022,
-			ID_WXEDIT1 = 1021,
+			ID_WXEDIT1 = 1039,
+			ID_WXRICHTEXTCTRL1 = 1038,
+			ID_WXPANEL1 = 1036,
 			ID_MNU_MENUITEM1_1014 = 1014,
 			ID_MNU_SAVE____1015 = 1015,
 			ID_MNU_LOAD____1016 = 1016,
 			ID_MNU_ABOUT_1017 = 1017,
 			
-			ID_WXPANEL1 = 1013,
 			////GUI Enum Control ID End
 			ID_DUMMY_VALUE_ //don't remove this value unless you have other enum values
 		};

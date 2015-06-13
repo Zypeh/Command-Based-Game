@@ -1,10 +1,10 @@
 object frmNewForm: TfrmNewForm
-  Left = 372
-  Top = -11
+  Left = 8
+  Top = 8
   AutoScroll = False
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Text Game'
-  ClientHeight = 335
+  ClientHeight = 341
   ClientWidth = 335
   Color = clAppWorkSpace
   OldCreateOrder = True
@@ -24,7 +24,7 @@ object frmNewForm: TfrmNewForm
   Wx_Hidden = False
   Wx_SizeToContents = True
   Wx_GeneralStyle = []
-  Wx_DialogStyle = [wxCAPTION, wxSYSTEM_MENU, wxDIALOG_NO_PARENT, wxMINIMIZE_BOX, wxCLOSE_BOX]
+  Wx_DialogStyle = [wxCAPTION, wxRESIZE_BORDER, wxSYSTEM_MENU, wxDIALOG_NO_PARENT, wxMINIMIZE_BOX, wxMAXIMIZE_BOX, wxCLOSE_BOX, wxFRAME_SHAPED]
   Wx_DesignerType = dtWxFrame
   Wx_Border = 0
   Wx_BorderAlignment = []
@@ -35,13 +35,14 @@ object frmNewForm: TfrmNewForm
     Left = 0
     Top = 0
     Width = 335
-    Height = 335
+    Height = 341
     Align = alClient
-    TabOrder = 0
+    TabOrder = 1
     Wx_Class = 'wxBoxSizer'
     Wx_ControlOrientation = wxControlVertical
     Wx_IDName = 'ID_WXBOXSIZER1'
-    Wx_IDValue = 1001
+    Wx_IDValue = 1035
+    Wx_StretchFactor = 1
     object WxPanel1: TWxPanel
       Left = 0
       Top = 0
@@ -58,8 +59,10 @@ object frmNewForm: TfrmNewForm
       Wx_GeneralStyle = []
       Wx_Hidden = False
       Wx_IDName = 'ID_WXPANEL1'
-      Wx_IDValue = 1013
+      Wx_IDValue = 1036
       Wx_Border = 0
+      Wx_Alignment = [wxALIGN_CENTER, wxEXPAND]
+      Wx_StretchFactor = 1
       Wx_PaneCaption = 'WxPanel1'
       Wx_PaneName = 'WxPanel1_Pane'
       Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
@@ -76,88 +79,117 @@ object frmNewForm: TfrmNewForm
       Wx_Floating_Width = 0
       Wx_Floating_X_Pos = 0
       Wx_Floating_Y_Pos = 0
-      object WxEdit1: TWxEdit
-        Left = 5
-        Top = 300
-        Width = 320
-        Height = 25
-        BevelInner = bvNone
-        BevelOuter = bvNone
-        AutoSize = False
+      object WxBoxSizer2: TWxBoxSizer
+        Left = 1
+        Top = 1
+        Width = 328
+        Height = 328
+        Align = alClient
         TabOrder = 0
-        Text = 'Type here...'
-        Wx_BGColor = clBlack
-        Wx_Class = 'wxTextCtrl'
+        Orientation = wxVertical
+        Wx_Class = 'wxBoxSizer'
         Wx_ControlOrientation = wxControlVertical
-        Wx_EditStyle = []
-        Wx_FGColor = clBlack
-        Wx_GeneralStyle = []
-        Wx_Hidden = False
-        Wx_IDName = 'ID_WXEDIT1'
-        Wx_IDValue = 1021
-        Wx_MaxLength = 0
-        Wx_PaneCaption = 'WxEdit1'
-        Wx_PaneName = 'WxEdit1_Pane'
-        Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
-        Wx_Aui_Dockable_Direction = []
-        Wx_Aui_Pane_Style = []
-        Wx_Aui_Pane_Buttons = []
-        Wx_BestSize_Height = 0
-        Wx_BestSize_Width = 0
-        Wx_MinSize_Height = 0
-        Wx_MinSize_Width = 0
-        Wx_MaxSize_Height = 0
-        Wx_MaxSize_Width = 0
-        Wx_Floating_Height = 0
-        Wx_Floating_Width = 0
-        Wx_Floating_X_Pos = 0
-        Wx_Floating_Y_Pos = 0
-      end
-      object WxRichTextCtrl1: TWxRichTextCtrl
-        Left = 5
-        Top = 5
-        Width = 320
-        Height = 290
-        BevelInner = bvNone
-        BevelOuter = bvNone
-        Lines.Strings = (
-          'WxRichTextCtrl1')
-        TabOrder = 1
-        Wx_BGColor = clBlack
-        Wx_Class = 'wxRichTextCtrl'
-        Wx_ControlOrientation = wxControlVertical
-        Wx_RichTextStyle = [wxRE_READONLY, wxRE_MULTILINE]
-        Wx_Enabled = False
-        Wx_FGColor = clBlack
-        Wx_GeneralStyle = []
-        Wx_IDName = 'ID_WXRICHTEXTCTRL1'
-        Wx_IDValue = 1022
-        Wx_MaxLength = 0
-        Wx_PaneCaption = 'WxRichTextCtrl1'
-        Wx_PaneName = 'WxRichTextCtrl1_Pane'
-        Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
-        Wx_Aui_Dockable_Direction = []
-        Wx_Aui_Pane_Style = []
-        Wx_Aui_Pane_Buttons = []
-        Wx_BestSize_Height = 0
-        Wx_BestSize_Width = 0
-        Wx_MinSize_Height = 0
-        Wx_MinSize_Width = 0
-        Wx_MaxSize_Height = 0
-        Wx_MaxSize_Width = 0
-        Wx_Floating_Height = 0
-        Wx_Floating_Width = 0
-        Wx_Floating_X_Pos = 0
-        Wx_Floating_Y_Pos = 0
+        Wx_IDName = 'ID_WXBOXSIZER2'
+        Wx_IDValue = 1037
+        Wx_Border = 0
+        object WxRichTextCtrl1: TWxRichTextCtrl
+          Left = 5
+          Top = 5
+          Width = 320
+          Height = 290
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          Lines.Strings = (
+            'WxRichTextCtrl1')
+          ParentFont = False
+          TabOrder = 0
+          Wx_BGColor = clBlack
+          Wx_Class = 'wxRichTextCtrl'
+          Wx_ControlOrientation = wxControlVertical
+          Wx_RichTextStyle = []
+          Wx_FGColor = clBlack
+          Wx_GeneralStyle = []
+          Wx_IDName = 'ID_WXRICHTEXTCTRL1'
+          Wx_IDValue = 1038
+          Wx_MaxLength = 0
+          Wx_BorderAlignment = [wxTOP, wxLEFT, wxRIGHT]
+          Wx_Alignment = [wxALIGN_CENTER, wxEXPAND]
+          Wx_StretchFactor = 1
+          Wx_PaneCaption = 'WxRichTextCtrl1'
+          Wx_PaneName = 'WxRichTextCtrl1_Pane'
+          Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+          Wx_Aui_Dockable_Direction = []
+          Wx_Aui_Pane_Style = []
+          Wx_Aui_Pane_Buttons = []
+          Wx_BestSize_Height = 0
+          Wx_BestSize_Width = 0
+          Wx_MinSize_Height = 0
+          Wx_MinSize_Width = 0
+          Wx_MaxSize_Height = 0
+          Wx_MaxSize_Width = 0
+          Wx_Floating_Height = 0
+          Wx_Floating_Width = 0
+          Wx_Floating_X_Pos = 0
+          Wx_Floating_Y_Pos = 0
+        end
+        object WxEdit1: TWxEdit
+          Left = 104
+          Top = 300
+          Width = 121
+          Height = 25
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          AutoSize = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+          Text = 'Type here'
+          Wx_BGColor = clBlack
+          Wx_Class = 'wxTextCtrl'
+          Wx_ControlOrientation = wxControlVertical
+          Wx_EditStyle = []
+          Wx_FGColor = clBlack
+          Wx_GeneralStyle = []
+          Wx_Hidden = False
+          Wx_IDName = 'ID_WXEDIT1'
+          Wx_IDValue = 1039
+          Wx_Alignment = [wxALIGN_CENTER, wxEXPAND]
+          Wx_MaxLength = 0
+          Wx_PaneCaption = 'WxEdit1'
+          Wx_PaneName = 'WxEdit1_Pane'
+          Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+          Wx_Aui_Dockable_Direction = []
+          Wx_Aui_Pane_Style = []
+          Wx_Aui_Pane_Buttons = []
+          Wx_BestSize_Height = 0
+          Wx_BestSize_Width = 0
+          Wx_MinSize_Height = 0
+          Wx_MinSize_Width = 0
+          Wx_MaxSize_Height = 0
+          Wx_MaxSize_Width = 0
+          Wx_Floating_Height = 0
+          Wx_Floating_Width = 0
+          Wx_Floating_X_Pos = 0
+          Wx_Floating_Y_Pos = 0
+        end
       end
     end
   end
   object WxMenuBar1: TWxMenuBar
-    Left = 0
+    Left = 1
     Top = 0
     Width = 28
     Height = 27
-    TabOrder = 1
+    TabOrder = 0
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000000000000000000000000000000000000FF00FF00FF00
@@ -214,40 +246,42 @@ object frmNewForm: TfrmNewForm
       65640816436172726965642E57585F4249544D41502E446174610A0C00000007
       544269746D61700000000012436172726965642E4B656570466F726D61740816
       436172726965642E57785F46696C65486973746F72790818436172726965642E
-      5778437573746F6D4D656E754974656D0AB40200001100000054577843757374
+      5778437573746F6D4D656E754974656D0AE60200001100000054577843757374
       6F6D4D656E754974656D5450463018547778437573746F6D4D656E754974656D
-      577261707065720011436172726965642E49735375624D656E75081243617272
-      6965642E57785F456E61626C65640911436172726965642E57785F4869646465
-      6E0811436172726965642E57785F49444E616D65061349445F4D4E555F534156
-      455F5F5F5F3130313512436172726965642E57785F494456616C756503F70318
-      436172726965642E57785F4D656E754974656D5374796C65070F77784D6E7549
-      746D5F4E6F726D616C12436172726965642E57785F43617074696F6E06075361
-      76652E2E2E12436172726965642E57785F436865636B65640816436172726965
-      642E57585F4249544D41502E446174610A0C00000007544269746D6170000000
-      0012436172726965642E4B656570466F726D61740816436172726965642E5778
-      5F46696C65486973746F727908000011000000545778437573746F6D4D656E75
-      4974656D5450463018547778437573746F6D4D656E754974656D577261707065
-      720011436172726965642E49735375624D656E750812436172726965642E5778
-      5F456E61626C65640911436172726965642E57785F48696464656E0811436172
-      726965642E57785F49444E616D65061349445F4D4E555F4C4F41445F5F5F5F31
-      30313612436172726965642E57785F494456616C756503F80318436172726965
-      642E57785F4D656E754974656D5374796C65070F77784D6E7549746D5F4E6F72
-      6D616C12436172726965642E57785F43617074696F6E06074C6F61642E2E2E12
-      436172726965642E57785F436865636B65640816436172726965642E57585F42
-      49544D41502E446174610A0C00000007544269746D6170000000001243617272
-      6965642E4B656570466F726D61740816436172726965642E57785F46696C6548
-      6973746F7279080000000011000000545778437573746F6D4D656E754974656D
-      5450463018547778437573746F6D4D656E754974656D57726170706572001143
-      6172726965642E49735375624D656E750812436172726965642E57785F456E61
-      626C65640911436172726965642E57785F48696464656E081143617272696564
-      2E57785F49444E616D65061149445F4D4E555F41424F55545F31303137124361
-      72726965642E57785F494456616C756503F90318436172726965642E57785F4D
-      656E754974656D5374796C65070F77784D6E7549746D5F4E6F726D616C124361
-      72726965642E57785F43617074696F6E060541626F757412436172726965642E
-      57785F436865636B65640816436172726965642E57585F4249544D41502E4461
-      74610A0C00000007544269746D61700000000012436172726965642E4B656570
-      466F726D61740816436172726965642E57785F46696C65486973746F72790800
-      00}
+      577261707065720011436172726965642E49735375624D656E75081043617272
+      6965642E4556545F4D656E7506064F6E5361766512436172726965642E57785F
+      456E61626C65640911436172726965642E57785F48696464656E081143617272
+      6965642E57785F49444E616D65061349445F4D4E555F534156455F5F5F5F3130
+      313512436172726965642E57785F494456616C756503F7031843617272696564
+      2E57785F4D656E754974656D5374796C65070F77784D6E7549746D5F4E6F726D
+      616C12436172726965642E57785F43617074696F6E0607536176652E2E2E1243
+      6172726965642E57785F436865636B65640816436172726965642E57585F4249
+      544D41502E446174610A0C00000007544269746D617000000000124361727269
+      65642E4B656570466F726D61740816436172726965642E57785F46696C654869
+      73746F727908000011000000545778437573746F6D4D656E754974656D545046
+      3018547778437573746F6D4D656E754974656D57726170706572001143617272
+      6965642E49735375624D656E750810436172726965642E4556545F4D656E7506
+      064F6E4C6F616412436172726965642E57785F456E61626C6564091143617272
+      6965642E57785F48696464656E0811436172726965642E57785F49444E616D65
+      061349445F4D4E555F4C4F41445F5F5F5F3130313612436172726965642E5778
+      5F494456616C756503F80318436172726965642E57785F4D656E754974656D53
+      74796C65070F77784D6E7549746D5F4E6F726D616C12436172726965642E5778
+      5F43617074696F6E06074C6F61642E2E2E12436172726965642E57785F436865
+      636B65640816436172726965642E57585F4249544D41502E446174610A0C0000
+      0007544269746D61700000000012436172726965642E4B656570466F726D6174
+      0816436172726965642E57785F46696C65486973746F72790800000000110000
+      00545778437573746F6D4D656E754974656D5450463018547778437573746F6D
+      4D656E754974656D577261707065720011436172726965642E49735375624D65
+      6E750810436172726965642E4556545F4D656E75060A41626F7574436C69636B
+      12436172726965642E57785F456E61626C65640911436172726965642E57785F
+      48696464656E0811436172726965642E57785F49444E616D65061149445F4D4E
+      555F41424F55545F3130313712436172726965642E57785F494456616C756503
+      F90318436172726965642E57785F4D656E754974656D5374796C65070F77784D
+      6E7549746D5F4E6F726D616C12436172726965642E57785F43617074696F6E06
+      0541626F757412436172726965642E57785F436865636B656408164361727269
+      65642E57585F4249544D41502E446174610A0C00000007544269746D61700000
+      000012436172726965642E4B656570466F726D61740816436172726965642E57
+      785F46696C65486973746F7279080000}
     Wx_HasHistory = False
   end
 end
