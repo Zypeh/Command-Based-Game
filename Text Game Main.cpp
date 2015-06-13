@@ -27,6 +27,7 @@ BEGIN_EVENT_TABLE(Text_GameFrm,wxFrame)
 	////Manual Code End
 	
 	EVT_CLOSE(Text_GameFrm::OnClose)
+	EVT_TEXT_ENTER(ID_INPUT,Text_GameFrm::InputEnter)
 	EVT_MENU(ID_MNU_SAVE____1015, Text_GameFrm::OnSave)
 	EVT_MENU(ID_MNU_LOAD____1016, Text_GameFrm::OnLoad)
 	EVT_MENU(ID_MNU_ABOUT_1017, Text_GameFrm::AboutClick)
@@ -62,17 +63,11 @@ void Text_GameFrm::CreateGUIControls()
 	WxPanel1->SetSizer(WxBoxSizer2);
 	WxPanel1->SetAutoLayout(true);
 
-	WxMemo1 = new wxTextCtrl(WxPanel1, ID_WXMEMO1, wxEmptyString, wxPoint(5, 5), wxSize(185, 89), wxTE_READONLY | wxTE_LEFT | wxTE_MULTILINE, wxDefaultValidator, _("WxMemo1"));
-	WxMemo1->SetMaxLength(0);
-	WxMemo1->Enable(false);
-	WxMemo1->AppendText(_("WxMemo1"));
-	WxMemo1->SetFocus();
-	WxMemo1->SetInsertionPointEnd();
-	WxBoxSizer2->Add(WxMemo1, 1, wxALIGN_CENTER | wxEXPAND | wxALL, 5);
-
-	WxEdit1 = new wxTextCtrl(WxPanel1, ID_WXEDIT1, _("Type here"), wxPoint(37, 104), wxSize(121, 25), 0, wxDefaultValidator, _("WxEdit1"));
-	WxEdit1->SetFont(wxFont(10, wxSWISS, wxNORMAL, wxNORMAL, false));
-	WxBoxSizer2->Add(WxEdit1, 0, wxALIGN_CENTER | wxEXPAND | wxALL, 5);
+	Output = new wxTextCtrl(WxPanel1, ID_OUTPUT, wxEmptyString, wxPoint(5, 5), wxSize(185, 89), wxTE_READONLY | wxTE_LEFT | wxTE_MULTILINE, wxDefaultValidator, _("Output"));
+	Output->SetMaxLength(0);
+	Output->SetFocus();
+	Output->SetInsertionPointEnd();
+	WxBoxSizer2->Add(Output, 1, wxALIGN_CENTER | wxEXPAND | wxALL, 5);
 
 	WxMenuBar1 = new wxMenuBar();
 	wxMenu *ID_MNU_MENUITEM1_1014_Mnu_Obj = new wxMenu();
@@ -85,6 +80,13 @@ void Text_GameFrm::CreateGUIControls()
 	SetMenuBar(WxMenuBar1);
 
 	SaveFile =  new wxFileDialog(this, _("Save your game"), _(""), _(""), _("*.json*"), wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxFD_CHANGE_DIR);
+
+	Input = new wxTextCtrl(WxPanel1, ID_INPUT, wxEmptyString, wxPoint(5, 99), wxSize(185, 25), wxTE_NO_VSCROLL | wxTE_LEFT | wxTE_MULTILINE, wxDefaultValidator, _("Input"));
+	Input->SetMaxLength(0);
+	Input->AppendText(_("Type Here"));
+	Input->SetFocus();
+	Input->SetInsertionPointEnd();
+	WxBoxSizer2->Add(Input, 0, wxALIGN_CENTER | wxEXPAND | wxLEFT | wxRIGHT | wxBOTTOM, 5);
 
 	SetTitle(_("Text Game"));
 	SetIcon(wxNullIcon);
@@ -152,3 +154,14 @@ void Text_GameFrm::OnLoad(wxCommandEvent& WXUNUSED(event))
     //Need loading validation, goto "http://docs.wxwidgets.org/trunk/classwx_file_dialog.html"
 }
 
+
+
+/*
+ * InputEnter
+ */
+void Text_GameFrm::InputEnter(wxCommandEvent& event)
+{
+    Output->AppendText(Input->GetValue());
+    Input->SetValue(wxT(""));
+    Output->AppendText(_("\n"));
+}

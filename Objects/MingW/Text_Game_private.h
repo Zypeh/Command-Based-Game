@@ -7,11 +7,11 @@
 #define TEXT_GAME_PRIVATE_H
 
 /* VERSION DEFINITIONS */
-#define VER_STRING	"0.0.0.44"
+#define VER_STRING	"0.0.0.62"
 #define VER_MAJOR	0
 #define VER_MINOR	0
 #define VER_RELEASE	0
-#define VER_BUILD	44
+#define VER_BUILD	62
 #define COMPANY_NAME	""
 #define FILE_VERSION	""
 #define FILE_DESCRIPTION	""

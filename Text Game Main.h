@@ -51,16 +51,20 @@ class Text_GameFrm : public wxFrame
 		void Mnumenuitem11014Click(wxCommandEvent& event);
 		void OnSave(wxCommandEvent& event);
 		void OnLoad(wxCommandEvent& event);
+		void WxMemo1Updated(wxCommandEvent& event);
+		void WxEdit1Updated(wxCommandEvent& event);
+		void InputUpdated(wxCommandEvent& event);
+		void InputEnter(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
+		wxTextCtrl *Input;
 		wxFileDialog *SaveFile;
 		wxMenuBar *WxMenuBar1;
-		wxTextCtrl *WxEdit1;
-		wxTextCtrl *WxMemo1;
+		wxTextCtrl *Output;
 		wxBoxSizer *WxBoxSizer2;
 		wxPanel *WxPanel1;
 		wxBoxSizer *WxBoxSizer1;
@@ -74,13 +78,13 @@ class Text_GameFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
+			ID_INPUT = 1041,
 			ID_MNU_MENUITEM1_1014 = 1014,
 			ID_MNU_SAVE____1015 = 1015,
 			ID_MNU_LOAD____1016 = 1016,
 			ID_MNU_ABOUT_1017 = 1017,
 			
-			ID_WXEDIT1 = 1039,
-			ID_WXMEMO1 = 1040,
+			ID_OUTPUT = 1040,
 			ID_WXPANEL1 = 1036,
 			////GUI Enum Control ID End
 			ID_DUMMY_VALUE_ //don't remove this value unless you have other enum values
