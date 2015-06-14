@@ -27,10 +27,10 @@ BEGIN_EVENT_TABLE(Text_GameFrm,wxFrame)
 	////Manual Code End
 	
 	EVT_CLOSE(Text_GameFrm::OnClose)
-	EVT_TEXT_ENTER(ID_INPUT,Text_GameFrm::InputEnter)
 	EVT_MENU(ID_MNU_SAVE____1015, Text_GameFrm::OnSave)
 	EVT_MENU(ID_MNU_LOAD____1016, Text_GameFrm::OnLoad)
 	EVT_MENU(ID_MNU_ABOUT_1017, Text_GameFrm::AboutClick)
+	EVT_TEXT_ENTER(ID_INPUT,Text_GameFrm::InputEnter)
 END_EVENT_TABLE()
 ////Event Table End
 
@@ -69,6 +69,16 @@ void Text_GameFrm::CreateGUIControls()
 	Output->SetInsertionPointEnd();
 	WxBoxSizer2->Add(Output, 1, wxALIGN_CENTER | wxEXPAND | wxALL, 5);
 
+	/* Hello
+	*/
+	Input = new wxTextCtrl(WxPanel1, ID_INPUT, wxEmptyString, wxPoint(5, 99), wxSize(185, 25), wxTE_NO_VSCROLL | wxTE_LEFT | wxTE_MULTILINE, wxDefaultValidator, _("Input"));
+	Input->SetMaxLength(0);
+	Input->SetFocus();
+	Input->SetInsertionPointEnd();
+	WxBoxSizer2->Add(Input, 0, wxALIGN_CENTER | wxEXPAND | wxLEFT | wxRIGHT | wxBOTTOM, 5);
+
+	SaveFile =  new wxFileDialog(this, _("Save your game"), _(""), _(""), _("*.json*"), wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxFD_CHANGE_DIR);
+
 	WxMenuBar1 = new wxMenuBar();
 	wxMenu *ID_MNU_MENUITEM1_1014_Mnu_Obj = new wxMenu();
 	ID_MNU_MENUITEM1_1014_Mnu_Obj->Append(ID_MNU_SAVE____1015, _("Save..."), _(""), wxITEM_NORMAL);
@@ -78,15 +88,6 @@ void Text_GameFrm::CreateGUIControls()
 	wxMenu *ID_MNU_ABOUT_1017_Mnu_Obj = new wxMenu();
 	WxMenuBar1->Append(ID_MNU_ABOUT_1017_Mnu_Obj, _("About"));
 	SetMenuBar(WxMenuBar1);
-
-	SaveFile =  new wxFileDialog(this, _("Save your game"), _(""), _(""), _("*.json*"), wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxFD_CHANGE_DIR);
-
-	Input = new wxTextCtrl(WxPanel1, ID_INPUT, wxEmptyString, wxPoint(5, 99), wxSize(185, 25), wxTE_NO_VSCROLL | wxTE_LEFT | wxTE_MULTILINE, wxDefaultValidator, _("Input"));
-	Input->SetMaxLength(0);
-	Input->AppendText(_("Type Here"));
-	Input->SetFocus();
-	Input->SetInsertionPointEnd();
-	WxBoxSizer2->Add(Input, 0, wxALIGN_CENTER | wxEXPAND | wxLEFT | wxRIGHT | wxBOTTOM, 5);
 
 	SetTitle(_("Text Game"));
 	SetIcon(wxNullIcon);
@@ -162,6 +163,9 @@ void Text_GameFrm::OnLoad(wxCommandEvent& WXUNUSED(event))
 void Text_GameFrm::InputEnter(wxCommandEvent& event)
 {
     Output->AppendText(Input->GetValue());
+    if (Input->GetValue() == ""){
+        return;   
+    }
     Input->SetValue(wxT(""));
     Output->AppendText(_("\n"));
 }
