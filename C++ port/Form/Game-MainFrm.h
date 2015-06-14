@@ -27,7 +27,6 @@
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
 #include <wx/menu.h>
-#include <wx/filedlg.h>
 #include <wx/textctrl.h>
 #include <wx/panel.h>
 #include <wx/sizer.h>
@@ -55,6 +54,13 @@ class Text_GameFrm : public wxFrame
 		void WxEdit1Updated(wxCommandEvent& event);
 		void InputUpdated(wxCommandEvent& event);
 		void InputEnter(wxCommandEvent& event);
+		void InputClickUrl(wxTextUrlEvent& event);
+		void InputUpdateUI(wxUpdateUIEvent& event);
+		void InputUpdated0(wxCommandEvent& event);
+		void InputUpdated1(wxCommandEvent& event);
+		void InputUpdated2(wxCommandEvent& event);
+		void InputClickUrl0(wxTextUrlEvent& event);
+		void Text_GameFrmSetFocus(wxFocusEvent& event);
 		
 	private:
 		//Do not add custom control declarations between
@@ -62,7 +68,6 @@ class Text_GameFrm : public wxFrame
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
 		wxMenuBar *WxMenuBar1;
-		wxFileDialog *SaveFile;
 		wxTextCtrl *Input;
 		wxTextCtrl *Output;
 		wxBoxSizer *WxBoxSizer2;

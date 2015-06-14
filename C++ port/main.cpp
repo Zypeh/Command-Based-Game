@@ -7,8 +7,8 @@
 //
 //---------------------------------------------------------------------------
 
-#include "Text GameApp.h"
-#include "Text Game Main.h"
+#include "main.h"
+#include "Form/Game-MainFrm.h"
 
 IMPLEMENT_APP(Text_GameFrmApp)
 

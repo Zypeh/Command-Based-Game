@@ -8,7 +8,7 @@
 ///
 ///------------------------------------------------------------------
 
-#include "Text Game Main.h"
+#include "Game-MainFrm.h"
 
 //Do not add custom headers between
 //Header Include Start and Header Include End
@@ -73,11 +73,10 @@ void Text_GameFrm::CreateGUIControls()
 	*/
 	Input = new wxTextCtrl(WxPanel1, ID_INPUT, wxEmptyString, wxPoint(5, 99), wxSize(185, 25), wxTE_NO_VSCROLL | wxTE_LEFT | wxTE_MULTILINE, wxDefaultValidator, _("Input"));
 	Input->SetMaxLength(0);
+	Input->AppendText(_("Type Here....."));
 	Input->SetFocus();
 	Input->SetInsertionPointEnd();
 	WxBoxSizer2->Add(Input, 0, wxALIGN_CENTER | wxEXPAND | wxLEFT | wxRIGHT | wxBOTTOM, 5);
-
-	SaveFile =  new wxFileDialog(this, _("Save your game"), _(""), _(""), _("*.json*"), wxFD_SAVE | wxFD_OVERWRITE_PROMPT | wxFD_CHANGE_DIR);
 
 	WxMenuBar1 = new wxMenuBar();
 	wxMenu *ID_MNU_MENUITEM1_1014_Mnu_Obj = new wxMenu();
@@ -89,7 +88,7 @@ void Text_GameFrm::CreateGUIControls()
 	WxMenuBar1->Append(ID_MNU_ABOUT_1017_Mnu_Obj, _("About"));
 	SetMenuBar(WxMenuBar1);
 
-	SetTitle(_("Text Game"));
+	SetTitle(_("Text Based Game"));
 	SetIcon(wxNullIcon);
 	
 	Layout();
