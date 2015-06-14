@@ -26,8 +26,8 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
-#include <wx/menu.h>
 #include <wx/filedlg.h>
+#include <wx/menu.h>
 #include <wx/textctrl.h>
 #include <wx/panel.h>
 #include <wx/sizer.h>
@@ -61,9 +61,9 @@ class Text_GameFrm : public wxFrame
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
-		wxMenuBar *WxMenuBar1;
-		wxFileDialog *SaveFile;
 		wxTextCtrl *Input;
+		wxFileDialog *SaveFile;
+		wxMenuBar *WxMenuBar1;
 		wxTextCtrl *Output;
 		wxBoxSizer *WxBoxSizer2;
 		wxPanel *WxPanel1;
@@ -78,12 +78,12 @@ class Text_GameFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
+			ID_INPUT = 1041,
 			ID_MNU_MENUITEM1_1014 = 1014,
 			ID_MNU_SAVE____1015 = 1015,
 			ID_MNU_LOAD____1016 = 1016,
 			ID_MNU_ABOUT_1017 = 1017,
 			
-			ID_INPUT = 1041,
 			ID_OUTPUT = 1040,
 			ID_WXPANEL1 = 1036,
 			////GUI Enum Control ID End

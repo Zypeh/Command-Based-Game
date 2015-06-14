@@ -7,19 +7,19 @@
 #define TEXT_GAME_PRIVATE_H
 
 /* VERSION DEFINITIONS */
-#define VER_STRING	"0.0.0.67"
+#define VER_STRING	"0.0.0.62"
 #define VER_MAJOR	0
 #define VER_MINOR	0
 #define VER_RELEASE	0
-#define VER_BUILD	67
+#define VER_BUILD	62
 #define COMPANY_NAME	""
 #define FILE_VERSION	""
 #define FILE_DESCRIPTION	""
-#define INTERNAL_NAME	"TextGame101"
-#define LEGAL_COPYRIGHT	"GNU GPL v3.0 License"
+#define INTERNAL_NAME	""
+#define LEGAL_COPYRIGHT	""
 #define LEGAL_TRADEMARKS	""
 #define ORIGINAL_FILENAME	""
-#define PRODUCT_NAME	"Text Based Game"
+#define PRODUCT_NAME	""
 #define PRODUCT_VERSION	""
 
 #endif /*TEXT_GAME_PRIVATE_H*/
