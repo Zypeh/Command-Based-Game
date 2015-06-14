@@ -1,22 +1,22 @@
 # Project: Text Based Game
 # Compiler: Default GCC compiler
 # Compiler Type: MingW 3
-# Makefile created by wxDev-C++ IDE 7.4.2.569 on 14/06/15 17:20
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 14/06/15 21:18
 
 WXLIBNAME = wxmsw29u
 CPP       = g++.exe
 CC        = gcc.exe
 WINDRES   = "windres.exe"
-OBJ       = Objects/MingW/main.o Objects/MingW/Game-MainFrm.o Objects/MingW/Text_Based_Game_private.res
-LINKOBJ   = "Objects/MingW/main.o" "Objects/MingW/Game-MainFrm.o" Objects/MingW/Text_Based_Game_private.res
-LIBS      = -L"C:/Program Files (x86)/Dev-Cpp/lib/wx/gcc_lib" -L"C:/Program Files (x86)/Dev-Cpp/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -mwindows -l$(WXLIBNAME) -l$(WXLIBNAME)_gl -lwxscintilla -lwxtiff -lwxjpeg -lwxpng -lwxzlib -lwxregexu -lwxexpat -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32 -lodbc32 -lopengl32  
+OBJ       = obj/main.o obj/Game-MainFrm.o obj/AboutFrm.o obj/Text_Based_Game_private.res
+LINKOBJ   = "obj/main.o" "obj/Game-MainFrm.o" "obj/AboutFrm.o" obj/Text_Based_Game_private.res
+LIBS      = -L"C:/Program Files (x86)/Dev-Cpp/lib/wx/gcc_lib" -L"C:/Program Files (x86)/Dev-Cpp/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -mwindows -l$(WXLIBNAME) -l$(WXLIBNAME)_gl -lwxscintilla -lwxtiff -lwxjpeg -lwxpng -lwxzlib -lwxregexu -lwxexpat -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32 -lodbc32 -lopengl32  -g3 
 INCS      = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
 CXXINCS   = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/" -I"C:/Program Files (x86)/Dev-Cpp/include/common"
 RCINCS    = --include-dir "C:/PROGRA~2/Dev-Cpp/include/common"
-BIN       = Output/MingW/Text Based Game.exe
+BIN       = exec/Text Based Game.exe
 DEFINES   = -D__WXMSW__ -D__GNUWIN32__ -D_UNICODE
-CXXFLAGS  = $(CXXINCS) $(DEFINES)  
-CFLAGS    = $(INCS) $(DEFINES)  
+CXXFLAGS  = $(CXXINCS) $(DEFINES)   -g3
+CFLAGS    = $(INCS) $(DEFINES)   -g3
 GPROF     = gprof.exe
 ifeq ($(OS),Windows_NT)
    RM = del /Q
@@ -36,11 +36,14 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
 
-Objects/MingW/main.o: $(GLOBALDEPS) main.cpp
-	$(CPP) -c main.cpp -o Objects/MingW/main.o $(CXXFLAGS)
+obj/main.o: $(GLOBALDEPS) main.cpp main.h Form/Game-MainFrm.h
+	$(CPP) -c main.cpp -o obj/main.o $(CXXFLAGS)
 
-Objects/MingW/Game-MainFrm.o: $(GLOBALDEPS) Form/Game-MainFrm.cpp
-	$(CPP) -c Form/Game-MainFrm.cpp -o Objects/MingW/Game-MainFrm.o $(CXXFLAGS)
+obj/Game-MainFrm.o: $(GLOBALDEPS) Form/Game-MainFrm.cpp Form/Game-MainFrm.h Form/AboutFrm.h
+	$(CPP) -c Form/Game-MainFrm.cpp -o obj/Game-MainFrm.o $(CXXFLAGS)
 
-Objects/MingW/Text_Based_Game_private.res: Objects/MingW/Text_Based_Game_private.rc main.rc 
-	$(WINDRES) --input-format=rc -o Objects/MingW/Text_Based_Game_private.res $(RCINCS) Objects/MingW/TEXT_B~1.RC -O coff
+obj/AboutFrm.o: $(GLOBALDEPS) Form/AboutFrm.cpp Form/AboutFrm.h
+	$(CPP) -c Form/AboutFrm.cpp -o obj/AboutFrm.o $(CXXFLAGS)
+
+obj/Text_Based_Game_private.res: obj/Text_Based_Game_private.rc main.rc 
+	$(WINDRES) --input-format=rc -o obj/Text_Based_Game_private.res $(RCINCS) obj/TEXT_B~1.RC -O coff

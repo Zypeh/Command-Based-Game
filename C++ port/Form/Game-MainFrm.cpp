@@ -9,6 +9,7 @@
 ///------------------------------------------------------------------
 
 #include "Game-MainFrm.h"
+#include "AboutFrm.h"
 
 //Do not add custom headers between
 //Header Include Start and Header Include End
@@ -29,8 +30,10 @@ BEGIN_EVENT_TABLE(Text_GameFrm,wxFrame)
 	EVT_CLOSE(Text_GameFrm::OnClose)
 	EVT_MENU(ID_MNU_SAVE____1015, Text_GameFrm::OnSave)
 	EVT_MENU(ID_MNU_LOAD____1016, Text_GameFrm::OnLoad)
-	EVT_MENU(ID_MNU_ABOUT_1017, Text_GameFrm::AboutClick)
+	EVT_MENU(ID_MNU_ABOUT_1043, Text_GameFrm::OnAbout)
+	EVT_MENU(ID_MNU_EXIT_1044, Text_GameFrm::OnExit)
 	EVT_TEXT_ENTER(ID_INPUT,Text_GameFrm::InputEnter)
+	EVT_UPDATE_UI(ID_INPUT,Text_GameFrm::InputUpdateUI0)
 END_EVENT_TABLE()
 ////Event Table End
 
@@ -43,6 +46,8 @@ Text_GameFrm::Text_GameFrm(wxWindow *parent, wxWindowID id, const wxString &titl
 Text_GameFrm::~Text_GameFrm()
 {
 }
+
+static int init = 0; //Check for first click or not
 
 void Text_GameFrm::CreateGUIControls()
 {
@@ -82,10 +87,9 @@ void Text_GameFrm::CreateGUIControls()
 	wxMenu *ID_MNU_MENUITEM1_1014_Mnu_Obj = new wxMenu();
 	ID_MNU_MENUITEM1_1014_Mnu_Obj->Append(ID_MNU_SAVE____1015, _("Save..."), _(""), wxITEM_NORMAL);
 	ID_MNU_MENUITEM1_1014_Mnu_Obj->Append(ID_MNU_LOAD____1016, _("Load..."), _(""), wxITEM_NORMAL);
+	ID_MNU_MENUITEM1_1014_Mnu_Obj->Append(ID_MNU_ABOUT_1043, _("About"), _(""), wxITEM_NORMAL);
+	ID_MNU_MENUITEM1_1014_Mnu_Obj->Append(ID_MNU_EXIT_1044, _("Exit"), _(""), wxITEM_NORMAL);
 	WxMenuBar1->Append(ID_MNU_MENUITEM1_1014_Mnu_Obj, _("Game"));
-	
-	wxMenu *ID_MNU_ABOUT_1017_Mnu_Obj = new wxMenu();
-	WxMenuBar1->Append(ID_MNU_ABOUT_1017_Mnu_Obj, _("About"));
 	SetMenuBar(WxMenuBar1);
 
 	SetTitle(_("Text Based Game"));
@@ -104,21 +108,6 @@ void Text_GameFrm::OnClose(wxCloseEvent& event)
 	Destroy();
 }
 
-/*
- * CloseClick
- */
-void Text_GameFrm::CloseClick(wxCommandEvent& event)
-{
-	Destroy();
-}
-
-/*
- * AboutClick
- */
-void Text_GameFrm::AboutClick(wxCommandEvent& event)
-{
-	// insert your code here
-}
 
 /*
  * OnSave
@@ -154,17 +143,48 @@ void Text_GameFrm::OnLoad(wxCommandEvent& WXUNUSED(event))
     //Need loading validation, goto "http://docs.wxwidgets.org/trunk/classwx_file_dialog.html"
 }
 
-
-
+    
 /*
  * InputEnter
  */
 void Text_GameFrm::InputEnter(wxCommandEvent& event)
 {
-    Output->AppendText(Input->GetValue());
     if (Input->GetValue() == ""){
-        return;   
+        return;
     }
+    Output->AppendText(Input->GetValue());
     Input->SetValue(wxT(""));
     Output->AppendText(_("\n"));
+}
+
+/*
+ * InputUpdateUI0
+ * This is to clear out the textbox on first focus.
+ */
+void Text_GameFrm::InputUpdateUI0(wxUpdateUIEvent& event)
+{
+    if (init == 0 && Input->HasFocus()){
+        Input->SetValue(wxT(""));
+        init++;
+    }
+    return;
+}
+
+/*
+ * OnAbout
+ */
+void Text_GameFrm::OnAbout(wxCommandEvent& event)
+{
+	AboutFrm* win = new AboutFrm(this);
+	win->Show();
+}
+
+
+
+/*
+ * OnExit
+ */
+void Text_GameFrm::OnExit(wxCommandEvent& event)
+{
+	Destroy();
 }

@@ -61,6 +61,9 @@ class Text_GameFrm : public wxFrame
 		void InputUpdated2(wxCommandEvent& event);
 		void InputClickUrl0(wxTextUrlEvent& event);
 		void Text_GameFrmSetFocus(wxFocusEvent& event);
+		void InputUpdateUI0(wxUpdateUIEvent& event);
+		void OnAbout(wxCommandEvent& event);
+		void OnExit(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between
@@ -86,7 +89,8 @@ class Text_GameFrm : public wxFrame
 			ID_MNU_MENUITEM1_1014 = 1014,
 			ID_MNU_SAVE____1015 = 1015,
 			ID_MNU_LOAD____1016 = 1016,
-			ID_MNU_ABOUT_1017 = 1017,
+			ID_MNU_ABOUT_1043 = 1043,
+			ID_MNU_EXIT_1044 = 1044,
 			
 			ID_INPUT = 1041,
 			ID_OUTPUT = 1040,
