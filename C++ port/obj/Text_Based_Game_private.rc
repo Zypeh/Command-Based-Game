@@ -4,6 +4,8 @@
 
 #include "../main.rc"
 
+A ICON MOVEABLE PURE LOADONCALL DISCARDABLE "Text Based Game.ico"
+
 // This section contains the executable version information. Go to
 // Project > Project Options to edit these values.
 1 VERSIONINFO

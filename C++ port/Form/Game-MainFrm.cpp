@@ -93,7 +93,7 @@ void Text_GameFrm::CreateGUIControls()
 	SetMenuBar(WxMenuBar1);
 
 	SetTitle(_("Text Based Game"));
-	SetIcon(wxNullIcon);
+	SetIcon(wxIcon("C:/Users/JunDong/Documents/GitHub/Text-Based-Game/Images/Icon.ico", wxBITMAP_TYPE_ICO));
 	
 	Layout();
 	GetSizer()->Fit(this);
