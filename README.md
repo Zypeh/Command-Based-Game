@@ -1,5 +1,6 @@
 # Text-Based-Game
 
 ## Branches
-"Old" - My first attempt at coding this thing.
-"Master" - My current(2nd) attempt at coding this thing.
+"Old" - The first attempt of coding/making this game.
+"Master" - The most stable code of the game.
+"Port" - The C++ port of the game, will merge into master and ultimately replace the C# code with C++ code.
