@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1435994177 source:c:\users\hch12907\documents\c++\textbasedgame\main.cpp
+	<iostream>
+	"InputHandler/commandHandler.h"
+
+1435993995 c:\users\hch12907\documents\c++\textbasedgame\inputhandler\commandhandler.h
+
+1435993962 source:c:\users\hch12907\documents\c++\textbasedgame\inputhandler\commandhandler.cpp
+	<iostream>
+	<cstdlib>
+	"CommandList\Commands.h"
+
+1435991651 c:\users\hch12907\documents\c++\textbasedgame\inputhandler\commandlist\commands.h
+
