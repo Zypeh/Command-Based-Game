@@ -26,6 +26,8 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
+#include <wx/stc/stc.h>
+#include <wx/statbmp.h>
 #include <wx/panel.h>
 #include <wx/sizer.h>
 ////Header Include End
@@ -49,6 +51,9 @@ class AboutFrm : public wxFrame
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
+		wxStyledTextCtrl *WxStyledTextCtrl1;
+		wxStaticBitmap *WxStaticBitmap1;
+		wxFlexGridSizer *WxFlexGridSizer1;
 		wxPanel *WxPanel1;
 		wxBoxSizer *WxBoxSizer1;
 		////GUI Control Declaration End
@@ -61,6 +66,8 @@ class AboutFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
+			ID_WXSTYLEDTEXTCTRL1 = 1009,
+			ID_WXSTATICBITMAP1 = 1004,
 			ID_WXPANEL1 = 1002,
 			////GUI Enum Control ID End
 			ID_DUMMY_VALUE_ //don't remove this value unless you have other enum values

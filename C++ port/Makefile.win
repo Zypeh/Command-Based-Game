@@ -1,7 +1,7 @@
-# Project: Text Based Game
+# Project: Command Based Game
 # Compiler: Default GCC compiler
 # Compiler Type: MingW 3
-# Makefile created by wxDev-C++ IDE 7.4.2.569 on 17/06/15 23:10
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 20/06/15 13:43
 
 WXLIBNAME = wxmsw29u
 CPP       = g++.exe
@@ -42,7 +42,7 @@ obj/main.o: $(GLOBALDEPS) main.cpp main.h Form/Game-MainFrm.h
 obj/Game-MainFrm.o: $(GLOBALDEPS) Form/Game-MainFrm.cpp Form/Game-MainFrm.h Form/AboutFrm.h
 	$(CPP) -c Form/Game-MainFrm.cpp -o obj/Game-MainFrm.o $(CXXFLAGS)
 
-obj/AboutFrm.o: $(GLOBALDEPS) Form/AboutFrm.cpp Form/AboutFrm.h
+obj/AboutFrm.o: $(GLOBALDEPS) Form/AboutFrm.cpp Form/AboutFrm.h Form/Images/AboutFrm_WxStaticBitmap1_XPM.xpm
 	$(CPP) -c Form/AboutFrm.cpp -o obj/AboutFrm.o $(CXXFLAGS)
 
 obj/Text_Based_Game_private.res: obj/Text_Based_Game_private.rc main.rc 
