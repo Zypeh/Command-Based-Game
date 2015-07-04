@@ -1988,3 +1988,30 @@
 	"Frame.h"
 	"../InputHandler/commandHandler.h"
 
+1436030333 source:c:\users\jundong\documents\github\text-based-game\c++ port\main.cpp
+	<iostream>
+	"UX/Frame.h"
+
+1436032810 c:\users\jundong\documents\github\text-based-game\c++ port\ux\frame.h
+	<wx/wx.h>
+	<wx/frame.h>
+	<wx/wxprec.h>
+	<wx/textctrl.h>
+	<wx/panel.h>
+	<wx/sizer.h>
+	<wx/menu.h>
+
+1436034019 source:c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandhandler.cpp
+	<iostream>
+	<cstdlib>
+	"commandHandler.h"
+	"CommandList\Commands.h"
+
+1436033842 c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandhandler.h
+
+1436016650 c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandlist\commands.h
+
+1436033766 source:c:\users\jundong\documents\github\text-based-game\c++ port\ux\frame.cpp
+	"Frame.h"
+	"../InputHandler/commandHandler.h"
+

@@ -6,16 +6,15 @@ using namespace std;
 #include "commandHandler.h"
 #include "CommandList\Commands.h"
 
-string Handler(string input)
+string Handler(string * input)
 {
-    if(input == "help")
+    if(*input == "help")
     {
-        cout << "This is help." << endl;
+        *input = "This is help.";
     }
     else
     {
-        cout << "Either a empty command or a invalid command. " << endl
-        << "Check if your command is correct, or is in lowercase." << endl;
+        *input = "Invalid command. \nCheck if your command is correct, or is in lowercase.";
     }
     return "1";
 }

@@ -1,6 +1,8 @@
 //Class Implementation of Frame.h
 
+#include "wx/colour.h"
 #include "Frame.h"
+#include "wx/gdicmn.h"
 #include "../InputHandler/commandHandler.h"
 
 BEGIN_EVENT_TABLE(MainFrame,wxFrame)
@@ -38,7 +40,7 @@ void MainFrame::CreateGUIControls()
     Panel->SetSizer(MainSizer);
     Panel->SetAutoLayout(true);
 
-    Output = new wxTextCtrl(Panel, ID_Output, wxEmptyString, wxPoint(5,5), wxSize(185,89), wxTE_READONLY|wxTE_LEFT|wxTE_MULTILINE, wxDefaultValidator, _("Output"));
+    Output = new wxTextCtrl(Panel, ID_Output, wxEmptyString, wxPoint(5,5), wxSize(185,89), wxTE_RICH|wxTE_READONLY|wxTE_LEFT|wxTE_MULTILINE, wxDefaultValidator, _("Output"));
     Output->SetMaxLength(0);
     Output->SetFocus();
     MainSizer->Add(Output, 1, wxALIGN_CENTER|wxEXPAND|wxALL, 5);
@@ -100,9 +102,16 @@ void MainFrame::OnEnter(wxCommandEvent& event)
     if (Input->GetValue() == ""){
         return;
     }
+    Output->SetDefaultStyle(wxTextAttr(*wxBLUE));
     Output->AppendText(Input->GetValue());
     Output->AppendText(_("\n"));
-    Handler(std::string(Input->GetValue()));
+    std::string in = std::string(Input->GetValue());
+    std::string * add = &in;
+    Handler(add);
+    wxString mystring(in);
+    Output->SetDefaultStyle(wxTextAttr(wxNullColour));
+    Output->AppendText(in);
+    Output->AppendText(_("\n"));
     Input->SetValue(wxT(""));
 }
 
