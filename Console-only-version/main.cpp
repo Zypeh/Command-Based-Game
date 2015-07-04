@@ -16,7 +16,7 @@ int main()
         cin >> input;
         string output = Handler(input);
 
-        if (output == "EXIT MESSAGE")
+        if (output == "0")
         {
             break;
         }
