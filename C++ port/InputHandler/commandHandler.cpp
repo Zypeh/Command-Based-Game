@@ -3,6 +3,7 @@
 
 using namespace std;
 
+#include "commandHandler.h"
 #include "CommandList\Commands.h"
 
 string Handler(string input)
@@ -10,10 +11,6 @@ string Handler(string input)
     if(input == "help")
     {
         cout << "This is help." << endl;
-    }
-    else if(input == "Exit")
-    {
-        return "0";
     }
     else
     {

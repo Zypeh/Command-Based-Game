@@ -1,26 +1,22 @@
-//---------------------------------------------------------------------------
-//
-// Name:        Text GameApp.cpp
-// Author:      JunDong
-// Created:     13/6/2015 5:48:05 PM
-// Description: 
-//
-//---------------------------------------------------------------------------
+#include <iostream>
 
-#include "main.h"
-#include "Form/Game-MainFrm.h"
+using namespace std;
 
-IMPLEMENT_APP(Text_GameFrmApp)
+#include "UX/Frame.h"
 
-bool Text_GameFrmApp::OnInit()
+IMPLEMENT_APP(TextBasedGame)
+
+float version = 0.1f;
+
+bool TextBasedGame::OnInit()
 {
-    Text_GameFrm* frame = new Text_GameFrm(NULL);
+    MainFrame* frame = new MainFrame(NULL);
     SetTopWindow(frame);
     frame->Show();
     return true;
 }
- 
-int Text_GameFrmApp::OnExit()
+
+int TextBasedGame::OnExit()
 {
-	return 0;
+    return 0;
 }
