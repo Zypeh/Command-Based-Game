@@ -48,7 +48,7 @@ void About::CreateGUIControls()
 
     std::string status(AutoVersion::STATUS_SHORT);
     std::string version(AutoVersion::FULLVERSION_STRING);
-	std::string LabelDetail = ("This program is licensed under the GNU GPL v3 standard.\n\nVersion: \n" + status + version + "\n\nWebsite: http://github.com/hch12907/Text-Based-Game");
+	std::string LabelDetail = ("This program is licensed under the GNU GPL v3 standard.\n\nVersion: \n" + version + status + "\n\nWebsite: http://github.com/hch12907/Text-Based-Game");
 	wxString dstring(LabelDetail);
 	Detail = new wxStaticText(AboutPanel, ID_Text, LabelDetail, wxPoint(0, 25), wxSize(20, 120), 0,  _("Detail"));
 	AboutSizer->Add(Detail, 0, wxALIGN_CENTER | wxEXPAND | wxALL, 10);

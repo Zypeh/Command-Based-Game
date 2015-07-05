@@ -3,6 +3,7 @@
 //Frame includes
 #include "Frame.h"
 #include "About.h"
+#include "../version.h"
 
 //Additional includes goes here
 #include "../InputHandler/commandHandler.h"
@@ -57,8 +58,11 @@ void MainFrame::CreateGUIControls()
     Panel->SetSizer(MainSizer);
     Panel->SetAutoLayout(true);
 
+    wxString version(AutoVersion::FULLVERSION_STRING);
+    wxString status(AutoVersion::STATUS_SHORT);
     Output = new wxTextCtrl(Panel, ID_Output, wxEmptyString, wxPoint(5,5), wxSize(185,89), wxTE_RICH|wxTE_READONLY|wxTE_LEFT|wxTE_MULTILINE, wxDefaultValidator, _("Output"));
     Output->SetMaxLength(0);
+    Output->AppendText(wxT("Welcome to the Text Based Game!\nThis is version " + version + status + ".\nType 'help' to get help."));
     Output->SetFocus();
     MainSizer->Add(Output, 1, wxALIGN_CENTER|wxEXPAND|wxALL, 5);
 
