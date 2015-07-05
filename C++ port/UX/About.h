@@ -25,12 +25,13 @@ class About : public wxFrame
 	private:
 		DECLARE_EVENT_TABLE();
 
-		wxStaticText *Text;
+		wxStaticText *Credit;
+		wxStaticText *Detail;
+		wxStaticText *Attrib;
 		wxStaticBitmap *Icon;
 		wxBoxSizer *AboutSizer;
 		wxPanel *AboutPanel;
 		wxBoxSizer *AboutFrameSizer;
-		wxBoxSizer *AboutSizer1;
 		wxBoxSizer *AboutInfo;
 
 		enum

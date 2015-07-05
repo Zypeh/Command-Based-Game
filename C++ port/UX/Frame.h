@@ -44,6 +44,7 @@ public:
     void OnEnter(wxCommandEvent& event);
     void OnFocus(wxUpdateUIEvent& event);
     void OnClose(wxCommandEvent& event);
+    void OnKey(wxKeyEvent& event);
 
 
 private:
@@ -57,6 +58,8 @@ private:
     wxPanel *Panel;
     wxBoxSizer *AppSizer;
     wxBoxSizer *MainSizer;
+    wxFileDialog *SaveFileDialog;
+    wxFileDialog *LoadFileDialog;
 
     //Creates control in a new place
     void CreateGUIControls();

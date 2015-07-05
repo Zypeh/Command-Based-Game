@@ -1,5 +1,9 @@
 #include "About.h"
 
+#include "wx/gdicmn.h"
+
+#include "../version.h"
+
 BEGIN_EVENT_TABLE(About,wxFrame)
 	EVT_CLOSE(About::OnClose)
 END_EVENT_TABLE()
@@ -23,30 +27,39 @@ void About::CreateGUIControls()
 	this->SetSizer(AboutFrameSizer);
 	this->SetAutoLayout(true);
 
-	AboutPanel = new wxPanel(this, ID_AboutPanel, wxPoint(0, 0), wxSize(300, 300));
+	AboutPanel = new wxPanel(this, ID_AboutPanel, wxPoint(0, 0), wxSize(300, 450));
 	AboutFrameSizer->Add(AboutPanel, 0, wxALIGN_CENTER | wxALL, 0);
 
 	AboutSizer = new wxBoxSizer(wxVERTICAL);
 	AboutPanel->SetSizer(AboutSizer);
 	AboutPanel->SetAutoLayout(true);
 
-	AboutSizer1 = new wxBoxSizer(wxHORIZONTAL);
-	AboutSizer->Add(AboutSizer1, 0, wxALIGN_CENTER|wxALL, 5);
+	AboutInfo = new wxBoxSizer(wxHORIZONTAL);
+	AboutSizer->Add(AboutInfo, 0, wxALIGN_CENTER|wxALL, 5);
 
 	wxImage image = wxBITMAP_PNG(icon).ConvertToImage();
-	wxBitmap imageIcon = wxBitmap(image.Scale(75,75));
-	Icon = new wxStaticBitmap(AboutPanel, ID_Icon, imageIcon, wxPoint(10, 23), wxSize(75, 75), wxALIGN_CENTER, _("StatBMP"));
-	AboutSizer1->Add(Icon, 0, wxALIGN_CENTER | wxALL, 0);
+	wxBitmap imageIcon = wxBitmap(image.Scale(110,110));
+	Icon = new wxStaticBitmap(AboutPanel, ID_Icon, imageIcon, wxPoint(10, 23), wxSize(110, 110), wxALIGN_CENTER, _("StatBMP"));
+	AboutInfo->Add(Icon, 0, wxALIGN_CENTER | wxALL, 0);
 
-    AboutInfo = new wxBoxSizer(wxHORIZONTAL);
-    AboutSizer1->Add(AboutInfo, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_CENTER_HORIZONTAL|wxEXPAND|wxTOP, 10);
+    wxString LabelCredit = _("Credits:\nKoh Jun Dong - UI and Optimization\nHoe Hao Cheng - Backstage and Game Logic");
+	Credit = new wxStaticText(AboutPanel, ID_Text, LabelCredit, wxPoint(87, 25), wxSize(20, 45), 0,  _("Credit"));
+	AboutSizer->Add(Credit, 0, wxALIGN_CENTER | wxEXPAND | wxALL, 10);
 
-    wxString LabelText = _("This program is brought to you by Hoe Hao Cheng and Koh Jun Dong.");
-	Text = new wxStaticText(AboutPanel, ID_Text, LabelText, wxPoint(87, 25), wxSize(185, 89), 0,  _("Text"));
-	AboutInfo->Add(Text, 1, wxALIGN_CENTER | wxEXPAND | wxLEFT, 10);
+    std::string status(AutoVersion::STATUS_SHORT);
+    std::string version(AutoVersion::FULLVERSION_STRING);
+	std::string LabelDetail = ("This program is licensed under the GNU GPL v3 standard.\n\nVersion: \n" + status + version + "\n\nWebsite: http://github.com/hch12907/Text-Based-Game");
+	wxString dstring(LabelDetail);
+	Detail = new wxStaticText(AboutPanel, ID_Text, LabelDetail, wxPoint(0, 25), wxSize(20, 120), 0,  _("Detail"));
+	AboutSizer->Add(Detail, 0, wxALIGN_CENTER | wxEXPAND | wxALL, 10);
+
+	std::string LabelAttrib = ("Library : \nwxWidgets (www.wxwidgets.org)\n\nSoftware : \nGIMP (www.gimp.org)\nMinGW (www.mingw.org)\nCode:Blocks (www.codeblocks.org)");
+	wxString lstring(LabelAttrib);
+	Attrib = new wxStaticText(AboutPanel, ID_Text, LabelAttrib, wxPoint(0, 25), wxSize(20, 140), 0,  _("Attrib"));
+	AboutSizer->Add(Attrib, 0, wxALIGN_CENTER | wxEXPAND | wxALL, 10);
 
 	SetTitle(_("About"));
-	SetIcon(wxIcon("C:/Users/JunDong/Documents/GitHub/Text-Based-Game/Images/Icon.ico", wxBITMAP_TYPE_ICO));
+	SetIcon(wxIcon("../Images/Icon.ico", wxBITMAP_TYPE_ICO));
 
 	Layout();
 	GetSizer()->Fit(this);

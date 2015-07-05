@@ -1992,7 +1992,7 @@
 	<iostream>
 	"UX/Frame.h"
 
-1436066826 c:\users\jundong\documents\github\text-based-game\c++ port\ux\frame.h
+1436085787 c:\users\jundong\documents\github\text-based-game\c++ port\ux\frame.h
 	<wx/wx.h>
 	<wx/frame.h>
 	<wx/wxprec.h>
@@ -2001,13 +2001,14 @@
 	<wx/sizer.h>
 	<wx/menu.h>
 
-1436064538 source:c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandhandler.cpp
+1436087416 source:c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandhandler.cpp
 	<iostream>
 	<cstdlib>
-	"commandHandler.h"
-	"CommandList\Commands.h"
 	<string>
 	<algorithm>
+	<map>
+	"commandHandler.h"
+	"CommandList\Commands.h"
 
 1436064401 c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandhandler.h
 
@@ -2023,10 +2024,10 @@
 	<iostream>
 	"UX/Frame.h"
 
-1436069162 source:c:\users\jundong\documents\github\text-based-game\c++ port\ux\about.cpp
+1436085787 source:c:\users\jundong\documents\github\text-based-game\c++ port\ux\about.cpp
 	"About.h"
 
-1436072345 c:\users\jundong\documents\github\text-based-game\c++ port\ux\about.h
+1436091222 c:\users\jundong\documents\github\text-based-game\c++ port\ux\about.h
 	<wx/wx.h>
 	<wx/frame.h>
 	<wx/wxprec.h>
@@ -2065,15 +2066,29 @@
 
 1412479150 c:\wxwidgets-3.0.2\include\wx\msw\ole\droptgt.h
 
-1436066922 source:c:\users\jundong\documents\github\text-based-game\c++ port\ux\main.cpp
+1436086052 source:c:\users\jundong\documents\github\text-based-game\c++ port\ux\main.cpp
 	"Frame.h"
 	"About.h"
 	"../InputHandler/commandHandler.h"
 	"wx/colour.h"
 	"wx/gdicmn.h"
+	"wx/stdpaths.h"
 
-1436069220 source:c:\users\jundong\documents\github\text-based-game\c++ port\main.rc
+1436080721 source:c:\users\jundong\documents\github\text-based-game\c++ port\main.rc
 
 1412479150 c:\wxwidgets-3.0.2\include\wx\generic\statbmpg.h
 	"wx/statbmp.h"
+
+1412479150 c:\wxwidgets-3.0.2\include\wx\stdpaths.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/filefn.h"
+	"wx/msw/stdpaths.h"
+	"wx/osx/core/stdpaths.h"
+	"wx/os2/stdpaths.h"
+	"wx/unix/stdpaths.h"
+
+1412479150 c:\wxwidgets-3.0.2\include\wx\msw\stdpaths.h
+
+1412479150 c:\wxwidgets-3.0.2\include\wx\unix\stdpaths.h
 

@@ -10,9 +10,11 @@
 //Additional wx includes goes here
 #include "wx/colour.h"
 #include "wx/gdicmn.h"
+#include "wx/stdpaths.h"
 
 //Announcing Event Handling
 BEGIN_EVENT_TABLE(MainFrame,wxFrame)
+    EVT_KEY_DOWN(MainFrame::OnKey)
     EVT_CLOSE(MainFrame::OnExit)
     EVT_MENU(ID_Save, MainFrame::OnSave)
     EVT_MENU(ID_Load, MainFrame::OnLoad)
@@ -34,11 +36,16 @@ MainFrame::~MainFrame()
 {
 }
 
+wxString History[10];
+int Hiscount = 0;
+int CheckCount = 9;
 bool inifocus = false; //check if the Input box was clicked on
 
 //The main initializer
 void MainFrame::CreateGUIControls()
 {
+    wxString exePath = wxStandardPaths::Get().GetDocumentsDir();
+
     AppSizer = new wxBoxSizer(wxHORIZONTAL);
     this->SetSizer(AppSizer);
     this->SetAutoLayout(true);
@@ -63,17 +70,19 @@ void MainFrame::CreateGUIControls()
     MenuBar = new wxMenuBar();
 	wxMenu *ID_File = new wxMenu();
 	wxMenu *MenuAbout = new wxMenu();
-	MenuAbout->Append(ID_About, _("About"), _(""), wxITEM_NORMAL);
-	ID_File->Append(ID_Save, _("Save..."), _(""), wxITEM_NORMAL);
-	ID_File->Append(ID_Load, _("Load..."), _(""), wxITEM_NORMAL);
-	ID_File->Append(ID_Exit, _("Exit"), _(""), wxITEM_NORMAL);
+	MenuAbout->Append(ID_About, _("About\tF1"), _(""), wxITEM_NORMAL);
+	ID_File->Append(ID_Save, _("Save...\tCtrl-S"), _(""), wxITEM_NORMAL);
+	ID_File->Append(ID_Load, _("Load...\tCtrl-L"), _(""), wxITEM_NORMAL);
+	ID_File->Append(ID_Exit, _("Exit\tAlt-F4"), _(""), wxITEM_NORMAL);
 	MenuBar->Append(ID_File, _("File"));
 	MenuBar->Append(MenuAbout, _("About"));
 	SetMenuBar(MenuBar);
 
 	SetTitle(_("Text Based Game"));
-	SetIcon(wxIcon("C:/Users/JunDong/Documents/GitHub/Text-Based-Game/Images/Icon.ico", wxBITMAP_TYPE_ICO));
+	SetIcon(wxIcon("../Images/Icon.ico", wxBITMAP_TYPE_ICO));
 
+	LoadFileDialog = new wxFileDialog(this, _("Load game file"), exePath, "", "JSON files (*.json)|*.json", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+    SaveFileDialog = new wxFileDialog(this, _("Save game file"), exePath, "save.json", "JSON files (*json)|*.json", wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
 	Layout();
 	GetSizer()->Fit(this);
 	GetSizer()->SetSizeHints(this);
@@ -84,13 +93,8 @@ void MainFrame::CreateGUIControls()
 
 void MainFrame::OnSave(wxCommandEvent& event)
 {
-	wxFileDialog
-	   saveFileDialog(this, _("Save game file"), "", "",
-                      "JSON files (*json)|*.json",
-                      wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
-
     //Do saving code here
-    if (saveFileDialog.ShowModal() == wxID_CANCEL)
+    if (SaveFileDialog->ShowModal() == wxID_CANCEL)
         return;
 
     //Need saving validation
@@ -98,13 +102,8 @@ void MainFrame::OnSave(wxCommandEvent& event)
 
 void MainFrame::OnLoad(wxCommandEvent& event)
 {
-    wxFileDialog
-        openFileDialog(this, _("Load game file"), "", "",
-                       "JSON files (*.json)|*.json",
-                       wxFD_OPEN|wxFD_FILE_MUST_EXIST);
-
     //Do loading code here
-    if (openFileDialog.ShowModal() == wxID_CANCEL)
+    if (LoadFileDialog->ShowModal() == wxID_CANCEL)
         return;
 
     //Need loading validation, goto "http://docs.wxwidgets.org/trunk/classwx_file_dialog.html"
@@ -120,6 +119,20 @@ void MainFrame::OnEnter(wxCommandEvent& event)
     Output->AppendText(_("\n"));                        // Endline
     std::string in = std::string(Input->GetValue());    // Assign a new std::string with the Input value
     std::string * add = &in;                            // Assign pointer on the new std::string
+    if (Hiscount < 10){
+        History[Hiscount] = Input->GetValue();
+        Hiscount++;
+    }
+    else
+    {
+        int j;
+        for (int i = 9; i > 0; i--)
+        {
+            j = i - 1;
+            History[j] = History[i];
+        }
+        History[Hiscount-1] = Input->GetValue();
+    }
     Handler(add);                                       // CommandHandler
     wxString mystring(in);                              // Convert the std::string into wxString
     Output->SetDefaultStyle(wxTextAttr(wxNullColour));  // Revert the colour
@@ -151,4 +164,13 @@ void MainFrame::OnExit(wxCloseEvent& event)
 void MainFrame::OnClose(wxCommandEvent& event)
 {
     Destroy();
+}
+
+void MainFrame::OnKey(wxKeyEvent& event)
+{
+    int keycode = event.GetKeyCode();
+    if (keycode == WXK_DOWN){
+        Input->SetValue(wxT("Testing"));
+    }
+    event.Skip();
 }
