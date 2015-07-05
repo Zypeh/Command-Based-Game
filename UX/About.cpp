@@ -27,7 +27,7 @@ void About::CreateGUIControls()
 	this->SetSizer(AboutFrameSizer);
 	this->SetAutoLayout(true);
 
-	AboutPanel = new wxPanel(this, ID_AboutPanel, wxPoint(0, 0), wxSize(300, 450));
+	AboutPanel = new wxPanel(this, ID_AboutPanel, wxPoint(0, 0), wxSize(300, 470));
 	AboutFrameSizer->Add(AboutPanel, 0, wxALIGN_CENTER | wxALL, 0);
 
 	AboutSizer = new wxBoxSizer(wxVERTICAL);
@@ -38,8 +38,8 @@ void About::CreateGUIControls()
 	AboutSizer->Add(AboutInfo, 0, wxALIGN_CENTER|wxALL, 5);
 
 	wxImage image = wxBITMAP_PNG(icon).ConvertToImage();
-	wxBitmap imageIcon = wxBitmap(image.Scale(110,110));
-	Icon = new wxStaticBitmap(AboutPanel, ID_Icon, imageIcon, wxPoint(10, 23), wxSize(110, 110), wxALIGN_CENTER, _("StatBMP"));
+	wxBitmap imageIcon = wxBitmap(image.Scale(128,128));
+	Icon = new wxStaticBitmap(AboutPanel, ID_Icon, imageIcon, wxPoint(10, 23), wxSize(128, 128), wxALIGN_CENTER, _("StatBMP"));
 	AboutInfo->Add(Icon, 0, wxALIGN_CENTER | wxALL, 0);
 
     wxString LabelCredit = _("Credits:\nKoh Jun Dong - UI and Optimization\nHoe Hao Cheng - Backstage and Game Logic");
