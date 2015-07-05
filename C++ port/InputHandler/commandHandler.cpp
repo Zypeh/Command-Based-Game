@@ -38,7 +38,6 @@ void Handler(string * input)
     {
     case StringValue1:
         *input = "This is help.";
-        *input = "Invalid command. \nCheck if your command is correct.";
         break;
     default:
         *input = "Invalid command.\nCheck if your command is correct.";
