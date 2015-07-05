@@ -79,7 +79,7 @@ void MainFrame::CreateGUIControls()
 	SetMenuBar(MenuBar);
 
 	SetTitle(_("Text Based Game"));
-	SetIcon(wxIcon("../Images/Icon.ico", wxBITMAP_TYPE_ICO));
+	SetIcon(wxIcon("Images/Icon.ico", wxBITMAP_TYPE_ICO));
 
 	LoadFileDialog = new wxFileDialog(this, _("Load game file"), exePath, "", "JSON files (*.json)|*.json", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
     SaveFileDialog = new wxFileDialog(this, _("Save game file"), exePath, "save.json", "JSON files (*json)|*.json", wxFD_SAVE|wxFD_OVERWRITE_PROMPT);

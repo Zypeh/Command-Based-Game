@@ -59,7 +59,7 @@ void About::CreateGUIControls()
 	AboutSizer->Add(Attrib, 0, wxALIGN_CENTER | wxEXPAND | wxALL, 10);
 
 	SetTitle(_("About"));
-	SetIcon(wxIcon("../Images/Icon.ico", wxBITMAP_TYPE_ICO));
+	SetIcon(wxIcon("Images/Icon.ico", wxBITMAP_TYPE_ICO));
 
 	Layout();
 	GetSizer()->Fit(this);
