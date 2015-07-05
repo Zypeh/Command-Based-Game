@@ -1,10 +1,17 @@
 //Class Implementation of Frame.h
 
-#include "wx/colour.h"
+//Frame includes
 #include "Frame.h"
-#include "wx/gdicmn.h"
+#include "About.h"
+
+//Additional includes goes here
 #include "../InputHandler/commandHandler.h"
 
+//Additional wx includes goes here
+#include "wx/colour.h"
+#include "wx/gdicmn.h"
+
+//Announcing Event Handling
 BEGIN_EVENT_TABLE(MainFrame,wxFrame)
     EVT_CLOSE(MainFrame::OnExit)
     EVT_MENU(ID_Save, MainFrame::OnSave)
@@ -15,18 +22,21 @@ BEGIN_EVENT_TABLE(MainFrame,wxFrame)
     EVT_UPDATE_UI(ID_Input, MainFrame::OnFocus)
 END_EVENT_TABLE()
 
+//Announcing function for later initialization
 MainFrame::MainFrame(wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &position, const wxSize& size, long style)
 :wxFrame(parent, id, title, position, size, style)
 {
 	CreateGUIControls();
 }
 
+//Empty Destructor
 MainFrame::~MainFrame()
 {
 }
 
-int init = 0;
+bool inifocus = false; //check if the Input box was clicked on
 
+//The main initializer
 void MainFrame::CreateGUIControls()
 {
     AppSizer = new wxBoxSizer(wxHORIZONTAL);
@@ -52,12 +62,13 @@ void MainFrame::CreateGUIControls()
 
     MenuBar = new wxMenuBar();
 	wxMenu *ID_File = new wxMenu();
-	wxMenu *ID_About = new wxMenu();
+	wxMenu *MenuAbout = new wxMenu();
+	MenuAbout->Append(ID_About, _("About"), _(""), wxITEM_NORMAL);
 	ID_File->Append(ID_Save, _("Save..."), _(""), wxITEM_NORMAL);
 	ID_File->Append(ID_Load, _("Load..."), _(""), wxITEM_NORMAL);
 	ID_File->Append(ID_Exit, _("Exit"), _(""), wxITEM_NORMAL);
 	MenuBar->Append(ID_File, _("File"));
-	MenuBar->Append(ID_About, _("About"));
+	MenuBar->Append(MenuAbout, _("About"));
 	SetMenuBar(MenuBar);
 
 	SetTitle(_("Text Based Game"));
@@ -68,6 +79,8 @@ void MainFrame::CreateGUIControls()
 	GetSizer()->SetSizeHints(this);
 	Center();
 }
+
+//Everything below is event handling
 
 void MainFrame::OnSave(wxCommandEvent& event)
 {
@@ -102,32 +115,32 @@ void MainFrame::OnEnter(wxCommandEvent& event)
     if (Input->GetValue() == ""){
         return;
     }
-    Output->SetDefaultStyle(wxTextAttr(*wxBLUE));
-    Output->AppendText(Input->GetValue());
-    Output->AppendText(_("\n"));
-    std::string in = std::string(Input->GetValue());
-    std::string * add = &in;
-    Handler(add);
-    wxString mystring(in);
-    Output->SetDefaultStyle(wxTextAttr(wxNullColour));
-    Output->AppendText(in);
-    Output->AppendText(_("\n"));
-    Input->SetValue(wxT(""));
+    Output->SetDefaultStyle(wxTextAttr(*wxBLUE)); //Set colour as blue
+    Output->AppendText(Input->GetValue());              // Shows whatever in the input box
+    Output->AppendText(_("\n"));                        // Endline
+    std::string in = std::string(Input->GetValue());    // Assign a new std::string with the Input value
+    std::string * add = &in;                            // Assign pointer on the new std::string
+    Handler(add);                                       // CommandHandler
+    wxString mystring(in);                              // Convert the std::string into wxString
+    Output->SetDefaultStyle(wxTextAttr(wxNullColour));  // Revert the colour
+    Output->AppendText(in);                             // Show the output from the Handler
+    Output->AppendText(_("\n"));                        // Endline
+    Input->SetValue(wxT(""));                           // Clear out the Input box
 }
 
 void MainFrame::OnFocus(wxUpdateUIEvent& event)
 {
-    if (init == 0 && Input->HasFocus()){
+    if (inifocus == false && Input->HasFocus()){
         Input->SetValue(wxT(""));
-        init++;
+        inifocus = true;
     }
     return;
 }
 
 void MainFrame::OnAbout(wxCommandEvent& event)
 {
-	//AboutForm* aframe = new AboutForm(this);
-	//aframe->Show();
+	About* aframe = new About(this);
+	aframe->Show();
 }
 
 void MainFrame::OnExit(wxCloseEvent& event)

@@ -6,8 +6,7 @@ using namespace std;
 
 IMPLEMENT_APP(TextBasedGame)
 
-float version = 0.1f;
-
+//Initialize the app
 bool TextBasedGame::OnInit()
 {
     MainFrame* frame = new MainFrame(NULL);
@@ -16,6 +15,7 @@ bool TextBasedGame::OnInit()
     return true;
 }
 
+//Upon exiting the app
 int TextBasedGame::OnExit()
 {
     return 0;

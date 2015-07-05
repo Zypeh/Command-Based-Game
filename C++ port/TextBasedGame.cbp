@@ -55,9 +55,14 @@
 		<Unit filename="InputHandler/CommandList/Commands.h" />
 		<Unit filename="InputHandler/commandHandler.cpp" />
 		<Unit filename="InputHandler/commandHandler.h" />
-		<Unit filename="UX/Frame.cpp" />
+		<Unit filename="UX/About.cpp" />
+		<Unit filename="UX/About.h" />
 		<Unit filename="UX/Frame.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="UX/main.cpp" />
+		<Unit filename="init.cpp" />
+		<Unit filename="main.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

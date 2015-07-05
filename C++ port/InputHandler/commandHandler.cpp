@@ -5,16 +5,21 @@ using namespace std;
 
 #include "commandHandler.h"
 #include "CommandList\Commands.h"
+#include <string>
+#include <algorithm>
 
-string Handler(string * input)
+
+void Handler(string * input)
 {
-    if(*input == "help")
+    std::string lowercased = *input;
+    std::transform(lowercased.begin(), lowercased.end(), lowercased.begin(), ::tolower );
+    if(lowercased == "help")
     {
         *input = "This is help.";
     }
     else
     {
-        *input = "Invalid command. \nCheck if your command is correct, or is in lowercase.";
+        *input = "Invalid command. \nCheck if your command is correct.";
     }
-    return "1";
+    return;
 }

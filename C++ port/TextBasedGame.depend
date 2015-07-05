@@ -1988,11 +1988,11 @@
 	"Frame.h"
 	"../InputHandler/commandHandler.h"
 
-1436030333 source:c:\users\jundong\documents\github\text-based-game\c++ port\main.cpp
+1436059244 source:c:\users\jundong\documents\github\text-based-game\c++ port\main.cpp
 	<iostream>
 	"UX/Frame.h"
 
-1436032810 c:\users\jundong\documents\github\text-based-game\c++ port\ux\frame.h
+1436066826 c:\users\jundong\documents\github\text-based-game\c++ port\ux\frame.h
 	<wx/wx.h>
 	<wx/frame.h>
 	<wx/wxprec.h>
@@ -2001,17 +2001,79 @@
 	<wx/sizer.h>
 	<wx/menu.h>
 
-1436034019 source:c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandhandler.cpp
+1436064538 source:c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandhandler.cpp
 	<iostream>
 	<cstdlib>
 	"commandHandler.h"
 	"CommandList\Commands.h"
+	<string>
+	<algorithm>
 
-1436033842 c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandhandler.h
+1436064401 c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandhandler.h
 
 1436016650 c:\users\jundong\documents\github\text-based-game\c++ port\inputhandler\commandlist\commands.h
 
-1436033766 source:c:\users\jundong\documents\github\text-based-game\c++ port\ux\frame.cpp
+1436063495 source:c:\users\jundong\documents\github\text-based-game\c++ port\ux\frame.cpp
 	"Frame.h"
 	"../InputHandler/commandHandler.h"
+	"wx/colour.h"
+	"wx/gdicmn.h"
+
+1436059244 source:c:\users\jundong\documents\github\text-based-game\c++ port\init.cpp
+	<iostream>
+	"UX/Frame.h"
+
+1436069162 source:c:\users\jundong\documents\github\text-based-game\c++ port\ux\about.cpp
+	"About.h"
+
+1436072345 c:\users\jundong\documents\github\text-based-game\c++ port\ux\about.h
+	<wx/wx.h>
+	<wx/frame.h>
+	<wx/wxprec.h>
+	<wx/stattext.h>
+	<wx/gdicmn.h>
+	<wx/statbmp.h>
+	<wx/imagpng.h>
+	<wx/bitmap.h>
+	<wx/panel.h>
+	<wx/sizer.h>
+	<wx/image.h>
+
+1412479150 c:\wxwidgets-3.0.2\include\wx\stc\stc.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/dnd.h"
+	"wx/stopwatch.h"
+	"wx/versioninfo.h"
+	"wx/textentry.h"
+	"wx/textctrl.h"
+
+1412479148 c:\wxwidgets-3.0.2\include\wx\dnd.h
+	"wx/defs.h"
+	"wx/dataobj.h"
+	"wx/cursor.h"
+	"wx/msw/ole/dropsrc.h"
+	"wx/msw/ole/droptgt.h"
+	"wx/motif/dnd.h"
+	"wx/x11/dnd.h"
+	"wx/gtk/dnd.h"
+	"wx/gtk1/dnd.h"
+	"wx/osx/dnd.h"
+	"wx/os2/dnd.h"
+
+1412479150 c:\wxwidgets-3.0.2\include\wx\msw\ole\dropsrc.h
+
+1412479150 c:\wxwidgets-3.0.2\include\wx\msw\ole\droptgt.h
+
+1436066922 source:c:\users\jundong\documents\github\text-based-game\c++ port\ux\main.cpp
+	"Frame.h"
+	"About.h"
+	"../InputHandler/commandHandler.h"
+	"wx/colour.h"
+	"wx/gdicmn.h"
+
+1436069220 source:c:\users\jundong\documents\github\text-based-game\c++ port\main.rc
+
+1412479150 c:\wxwidgets-3.0.2\include\wx\generic\statbmpg.h
+	"wx/statbmp.h"
 

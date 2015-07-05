@@ -3,7 +3,7 @@
 #ifndef FRAME_H_INCLUDED
 #define FRAME_H_INCLUDED
 
-
+//If compiler can use pre-compiled header....
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
     #include <wx/frame.h>
@@ -11,15 +11,17 @@
     #include <wx/wxprec.h>
 #endif // WX_PRECOMP
 
+//All the necessary "components"
 #include <wx/textctrl.h>
 #include <wx/panel.h>
 #include <wx/sizer.h>
 #include <wx/menu.h>
 
+//Define MainFrame first for later initialization
 #undef MainFrame_STYLE
 #define MainFrame_STYLE wxCAPTION | wxRESIZE_BORDER | wxSYSTEM_MENU | wxMINIMIZE_BOX | wxMAXIMIZE_BOX | wxCLOSE_BOX | wxFRAME_SHAPED
 
-
+//Handling of the main app
 class TextBasedGame: public wxApp
 {
 public:
@@ -27,13 +29,14 @@ public:
     virtual int OnExit();
 };
 
+//Handling of the MainFrame
 class MainFrame: public wxFrame
 {
 public:
     MainFrame(wxWindow *parent, wxWindowID id = 1, const wxString& title = wxT("Command Based Game"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = MainFrame_STYLE);
     virtual ~MainFrame();
 
-    //Stating the functions for each interaction
+    //Stating the event handler for each interaction
     void OnExit(wxCloseEvent& event);
     void OnAbout(wxCommandEvent& event);
     void OnSave(wxCommandEvent& event);
