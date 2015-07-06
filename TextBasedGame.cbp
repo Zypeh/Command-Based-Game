@@ -53,8 +53,7 @@
 			<Add directory="$(#wx)/include" />
 		</ResourceCompiler>
 		<Linker>
-			<Add option="-static-libgcc" />
-			<Add option="-static-libstdc++" />
+			<Add option="-static" />
 		</Linker>
 		<Unit filename="Images/Icon.ico" />
 		<Unit filename="Images/Icon.png" />
