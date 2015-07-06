@@ -52,6 +52,10 @@
 		<ResourceCompiler>
 			<Add directory="$(#wx)/include" />
 		</ResourceCompiler>
+		<Linker>
+			<Add option="-static-libgcc" />
+			<Add option="-static-libstdc++" />
+		</Linker>
 		<Unit filename="Images/Icon.ico" />
 		<Unit filename="Images/Icon.png" />
 		<Unit filename="InputHandler/CommandList/Commands.h" />

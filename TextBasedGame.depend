@@ -2118,11 +2118,12 @@
 
 1436016650 c:\users\jundong\documents\github\text-based-game\inputhandler\commandlist\commands.h
 
-1436108429 source:c:\users\jundong\documents\github\text-based-game\main.rc
+1436108779 source:c:\users\jundong\documents\github\text-based-game\main.rc
 
-1436104442 source:c:\users\jundong\documents\github\text-based-game\ux\main.cpp
+1436108779 source:c:\users\jundong\documents\github\text-based-game\ux\main.cpp
 	"Frame.h"
 	"About.h"
+	"../version.h"
 	"../InputHandler/commandHandler.h"
 	"wx/colour.h"
 	"wx/gdicmn.h"
@@ -2141,10 +2142,10 @@
 	<wx/sizer.h>
 	<wx/image.h>
 
-1436108567 source:c:\users\jundong\documents\github\text-based-game\ux\about.cpp
+1436108779 source:c:\users\jundong\documents\github\text-based-game\ux\about.cpp
 	"About.h"
 	"wx/gdicmn.h"
 	"../version.h"
 
-1436108623 c:\users\jundong\documents\github\text-based-game\version.h
+1436108779 c:\users\jundong\documents\github\text-based-game\version.h
 
