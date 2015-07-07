@@ -5,10 +5,10 @@
 
 //If compiler can use pre-compiled header....
 #ifndef WX_PRECOMP
-    #include <wx/wx.h>
-    #include <wx/frame.h>
+#include <wx/wx.h>
+#include <wx/frame.h>
 #else
-    #include <wx/wxprec.h>
+#include <wx/wxprec.h>
 #endif // WX_PRECOMP
 
 //All the necessary "components"

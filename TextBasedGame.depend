@@ -129,14 +129,14 @@
 	"wx/msw/winundef.h"
 	"wx/features.h"
 
-1436019893 c:\wxwidgets-3.0.2\include\wx\platform.h
+1412479150 c:\wxwidgets-3.0.2\include\wx\platform.h
 	<unistd.h>
 	<TargetConditionals.h>
 	<AvailabilityMacros.h>
 	"wx/osx/config_xcode.h"
 	"wx/android/config_android.h"
 	"wx/compiler.h"
-	"wx/setup_redirect.h"
+	"wx/setup.h"
 	"wx/msw/wince/libraries.h"
 	"wx/msw/libraries.h"
 	"wx/msw/gccpriv.h"
@@ -2092,11 +2092,11 @@
 
 1412479150 c:\wxwidgets-3.0.2\include\wx\unix\stdpaths.h
 
-1436059244 source:c:\users\jundong\documents\github\text-based-game\init.cpp
+1436197652 source:c:\users\jundong\documents\github\text-based-game\init.cpp
 	<iostream>
 	"UX/Frame.h"
 
-1436085787 c:\users\jundong\documents\github\text-based-game\ux\frame.h
+1436196125 c:\users\jundong\documents\github\text-based-game\ux\frame.h
 	<wx/wx.h>
 	<wx/frame.h>
 	<wx/wxprec.h>
@@ -2105,7 +2105,7 @@
 	<wx/sizer.h>
 	<wx/menu.h>
 
-1436087416 source:c:\users\jundong\documents\github\text-based-game\inputhandler\commandhandler.cpp
+1436196125 source:c:\users\jundong\documents\github\text-based-game\inputhandler\commandhandler.cpp
 	<iostream>
 	<cstdlib>
 	<string>
@@ -2120,7 +2120,7 @@
 
 1436108779 source:c:\users\jundong\documents\github\text-based-game\main.rc
 
-1436108779 source:c:\users\jundong\documents\github\text-based-game\ux\main.cpp
+1436196125 source:c:\users\jundong\documents\github\text-based-game\ux\main.cpp
 	"Frame.h"
 	"About.h"
 	"../version.h"
@@ -2129,7 +2129,7 @@
 	"wx/gdicmn.h"
 	"wx/stdpaths.h"
 
-1436091222 c:\users\jundong\documents\github\text-based-game\ux\about.h
+1436196125 c:\users\jundong\documents\github\text-based-game\ux\about.h
 	<wx/wx.h>
 	<wx/frame.h>
 	<wx/wxprec.h>
@@ -2142,10 +2142,14 @@
 	<wx/sizer.h>
 	<wx/image.h>
 
-1436108779 source:c:\users\jundong\documents\github\text-based-game\ux\about.cpp
+1436196125 source:c:\users\jundong\documents\github\text-based-game\ux\about.cpp
 	"About.h"
 	"wx/gdicmn.h"
 	"../version.h"
 
-1436108779 c:\users\jundong\documents\github\text-based-game\version.h
+1436197659 c:\users\jundong\documents\github\text-based-game\version.h
+
+1412479150 c:\wxwidgets-3.0.2\lib\gcc_lib\mswu\wx\setup.h
+
+1412479150 c:\wxwidgets-3.0.2\lib\gcc_lib\mswud\wx\setup.h
 

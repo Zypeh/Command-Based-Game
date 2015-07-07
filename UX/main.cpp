@@ -27,9 +27,9 @@ END_EVENT_TABLE()
 
 //Announcing function for later initialization
 MainFrame::MainFrame(wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &position, const wxSize& size, long style)
-:wxFrame(parent, id, title, position, size, style)
+    :wxFrame(parent, id, title, position, size, style)
 {
-	CreateGUIControls();
+    CreateGUIControls();
 }
 
 //Empty Destructor
@@ -72,25 +72,25 @@ void MainFrame::CreateGUIControls()
     MainSizer->Add(Input, 0, wxALIGN_CENTER|wxEXPAND|wxLEFT|wxRIGHT|wxBOTTOM, 5);
 
     MenuBar = new wxMenuBar();
-	wxMenu *ID_File = new wxMenu();
-	wxMenu *MenuAbout = new wxMenu();
-	MenuAbout->Append(ID_About, _("About\tF1"), _(""), wxITEM_NORMAL);
-	ID_File->Append(ID_Save, _("Save...\tCtrl-S"), _(""), wxITEM_NORMAL);
-	ID_File->Append(ID_Load, _("Load...\tCtrl-L"), _(""), wxITEM_NORMAL);
-	ID_File->Append(ID_Exit, _("Exit\tAlt-F4"), _(""), wxITEM_NORMAL);
-	MenuBar->Append(ID_File, _("File"));
-	MenuBar->Append(MenuAbout, _("About"));
-	SetMenuBar(MenuBar);
+    wxMenu *ID_File = new wxMenu();
+    wxMenu *MenuAbout = new wxMenu();
+    MenuAbout->Append(ID_About, _("About\tF1"), _(""), wxITEM_NORMAL);
+    ID_File->Append(ID_Save, _("Save...\tCtrl-S"), _(""), wxITEM_NORMAL);
+    ID_File->Append(ID_Load, _("Load...\tCtrl-L"), _(""), wxITEM_NORMAL);
+    ID_File->Append(ID_Exit, _("Exit\tAlt-F4"), _(""), wxITEM_NORMAL);
+    MenuBar->Append(ID_File, _("File"));
+    MenuBar->Append(MenuAbout, _("About"));
+    SetMenuBar(MenuBar);
 
-	SetTitle(_("Text Based Game"));
-	SetIcon(wxIcon("Images/Icon.ico", wxBITMAP_TYPE_ICO));
+    SetTitle(_("Text Based Game"));
+    SetIcon(wxIcon("Images/Icon.ico", wxBITMAP_TYPE_ICO));
 
-	LoadFileDialog = new wxFileDialog(this, _("Load game file"), exePath, "", "JSON files (*.json)|*.json", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+    LoadFileDialog = new wxFileDialog(this, _("Load game file"), exePath, "", "JSON files (*.json)|*.json", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
     SaveFileDialog = new wxFileDialog(this, _("Save game file"), exePath, "save.json", "JSON files (*json)|*.json", wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
-	Layout();
-	GetSizer()->Fit(this);
-	GetSizer()->SetSizeHints(this);
-	Center();
+    Layout();
+    GetSizer()->Fit(this);
+    GetSizer()->SetSizeHints(this);
+    Center();
 }
 
 //Everything below is event handling
@@ -115,7 +115,8 @@ void MainFrame::OnLoad(wxCommandEvent& event)
 
 void MainFrame::OnEnter(wxCommandEvent& event)
 {
-    if (Input->GetValue() == ""){
+    if (Input->GetValue() == "")
+    {
         return;
     }
     Output->SetDefaultStyle(wxTextAttr(*wxBLUE)); //Set colour as blue
@@ -123,7 +124,8 @@ void MainFrame::OnEnter(wxCommandEvent& event)
     Output->AppendText(_("\n"));                        // Endline
     std::string in = std::string(Input->GetValue());    // Assign a new std::string with the Input value
     std::string * add = &in;                            // Assign pointer on the new std::string
-    if (Hiscount < 10){
+    if (Hiscount < 10)
+    {
         History[Hiscount] = Input->GetValue();
         Hiscount++;
     }
@@ -147,7 +149,8 @@ void MainFrame::OnEnter(wxCommandEvent& event)
 
 void MainFrame::OnFocus(wxUpdateUIEvent& event)
 {
-    if (inifocus == false && Input->HasFocus()){
+    if (inifocus == false && Input->HasFocus())
+    {
         Input->SetValue(wxT(""));
         inifocus = true;
     }
@@ -156,13 +159,13 @@ void MainFrame::OnFocus(wxUpdateUIEvent& event)
 
 void MainFrame::OnAbout(wxCommandEvent& event)
 {
-	About* aframe = new About(this);
-	aframe->Show();
+    About* aframe = new About(this);
+    aframe->Show();
 }
 
 void MainFrame::OnExit(wxCloseEvent& event)
 {
-	Destroy();
+    Destroy();
 }
 
 void MainFrame::OnClose(wxCommandEvent& event)
@@ -173,7 +176,8 @@ void MainFrame::OnClose(wxCommandEvent& event)
 void MainFrame::OnKey(wxKeyEvent& event)
 {
     int keycode = event.GetKeyCode();
-    if (keycode == WXK_DOWN){
+    if (keycode == WXK_DOWN)
+    {
         Input->SetValue(wxT("Testing"));
     }
     event.Skip();

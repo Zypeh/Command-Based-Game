@@ -10,7 +10,8 @@ using namespace std;
 #include "CommandList\Commands.h"
 
 //Enumerator, add new definition here
-enum String {
+enum String
+{
     StringUndefined,
     StringValue1
 };
