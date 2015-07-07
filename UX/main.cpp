@@ -62,7 +62,7 @@ void MainFrame::CreateGUIControls()
     wxString status(AutoVersion::STATUS_SHORT);
     Output = new wxTextCtrl(Panel, ID_Output, wxEmptyString, wxPoint(5,5), wxSize(185,89), wxTE_RICH|wxTE_READONLY|wxTE_LEFT|wxTE_MULTILINE, wxDefaultValidator, _("Output"));
     Output->SetMaxLength(0);
-    Output->AppendText(wxT("Welcome to the Text Based Game!\nThis is version " + version + status + ".\nType 'help' to get help."));
+    Output->AppendText(wxT("Welcome to the Text Based Game!\nThis is version " + version + status + ".\nType 'help' to get help.\n"));
     Output->SetFocus();
     MainSizer->Add(Output, 1, wxALIGN_CENTER|wxEXPAND|wxALL, 5);
 
@@ -83,7 +83,7 @@ void MainFrame::CreateGUIControls()
     SetMenuBar(MenuBar);
 
     SetTitle(_("Text Based Game"));
-    SetIcon(wxIcon("Images/Icon.ico", wxBITMAP_TYPE_ICO));
+    SetIcon(wxICON(prog));
 
     LoadFileDialog = new wxFileDialog(this, _("Load game file"), exePath, "", "JSON files (*.json)|*.json", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
     SaveFileDialog = new wxFileDialog(this, _("Save game file"), exePath, "save.json", "JSON files (*json)|*.json", wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
@@ -178,7 +178,7 @@ void MainFrame::OnKey(wxKeyEvent& event)
     int keycode = event.GetKeyCode();
     if (keycode == WXK_DOWN)
     {
-        Input->SetValue(wxT("Testing"));
+        Input->AppendText(wxT("Testing"));
     }
     event.Skip();
 }

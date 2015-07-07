@@ -33,7 +33,10 @@ void Handler(string * input)
     std::transform(lowercased.begin(), lowercased.end(), lowercased.begin(), ::tolower );
     size_t found = lowercased.find_first_of(" ");
     std::string mainStr = lowercased.substr(0,found);
+    if (found == 0)
+    {
     std::string subStr = lowercased.substr(found);
+    }
 
     switch (Valuemap[mainStr])
     {

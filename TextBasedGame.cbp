@@ -36,7 +36,8 @@
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
-					<Add option="-O2" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
 					<Add directory="$(#wx)/lib/gcc_lib/mswu" />
 				</Compiler>
 				<ResourceCompiler>
@@ -59,7 +60,6 @@
 			<Add option="-fexceptions" />
 			<Add option="-pipe" />
 			<Add option="-mthreads" />
-			<Add option="-Winvalid-pch" />
 			<Add option="-D__GNUWIN32__" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DwxUSE_UNICODE" />
