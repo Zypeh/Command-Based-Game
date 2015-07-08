@@ -2096,7 +2096,7 @@
 	<iostream>
 	"UX/Frame.h"
 
-1436196125 c:\users\jundong\documents\github\text-based-game\ux\frame.h
+1436355217 c:\users\jundong\documents\github\text-based-game\ux\frame.h
 	<wx/wx.h>
 	<wx/frame.h>
 	<wx/wxprec.h>
@@ -2105,7 +2105,7 @@
 	<wx/sizer.h>
 	<wx/menu.h>
 
-1436259087 source:c:\users\jundong\documents\github\text-based-game\inputhandler\commandhandler.cpp
+1436355213 source:c:\users\jundong\documents\github\text-based-game\inputhandler\commandhandler.cpp
 	<iostream>
 	<cstdlib>
 	<string>
@@ -2120,7 +2120,7 @@
 
 1436256872 source:c:\users\jundong\documents\github\text-based-game\main.rc
 
-1436258980 source:c:\users\jundong\documents\github\text-based-game\ux\main.cpp
+1436367407 source:c:\users\jundong\documents\github\text-based-game\ux\main.cpp
 	"Frame.h"
 	"About.h"
 	"../version.h"
@@ -2147,7 +2147,7 @@
 	"wx/gdicmn.h"
 	"../version.h"
 
-1436259046 c:\users\jundong\documents\github\text-based-game\version.h
+1436368972 c:\users\jundong\documents\github\text-based-game\version.h
 
 1412479150 c:\wxwidgets-3.0.2\lib\gcc_lib\mswu\wx\setup.h
 

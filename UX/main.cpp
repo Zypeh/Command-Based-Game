@@ -37,9 +37,11 @@ MainFrame::~MainFrame()
 {
 }
 
-wxString History[10];
+wxString History[20];
 int Hiscount = 0;
-int CheckCount = 9;
+int checkcount = 20;
+bool last = false;
+bool hasClicked = false;
 bool inifocus = false; //check if the Input box was clicked on
 
 //The main initializer
@@ -91,6 +93,8 @@ void MainFrame::CreateGUIControls()
     GetSizer()->Fit(this);
     GetSizer()->SetSizeHints(this);
     Center();
+
+    Input->Bind(wxEVT_CHAR, &MainFrame::OnKey, this, ID_Input, ID_Input, NULL);
 }
 
 //Everything below is event handling
@@ -124,7 +128,7 @@ void MainFrame::OnEnter(wxCommandEvent& event)
     Output->AppendText(_("\n"));                        // Endline
     std::string in = std::string(Input->GetValue());    // Assign a new std::string with the Input value
     std::string * add = &in;                            // Assign pointer on the new std::string
-    if (Hiscount < 10)
+    if (Hiscount <= 19)
     {
         History[Hiscount] = Input->GetValue();
         Hiscount++;
@@ -132,10 +136,16 @@ void MainFrame::OnEnter(wxCommandEvent& event)
     else
     {
         int j;
-        for (int i = 9; i > 0; i--)
+        wxString Temporary[20];
+        for (int i = 19; i >= 0; i--)
+        {
+            Temporary[i] = History[i];
+
+        }
+        for (int i = 19; i > 0; i--)
         {
             j = i - 1;
-            History[j] = History[i];
+            History[j] = Temporary[i];
         }
         History[Hiscount-1] = Input->GetValue();
     }
@@ -176,9 +186,43 @@ void MainFrame::OnClose(wxCommandEvent& event)
 void MainFrame::OnKey(wxKeyEvent& event)
 {
     int keycode = event.GetKeyCode();
-    if (keycode == WXK_DOWN)
+
+    if (hasClicked == false && Input->GetValue() == "")
     {
-        Input->AppendText(wxT("Testing"));
+        checkcount = 20;
+        if (19 >= Hiscount)
+            checkcount = Hiscount;
     }
-    event.Skip();
+
+    switch (keycode)
+    {
+    case WXK_DOWN:
+        if (checkcount == 19 && Input->GetValue() != "")
+        {
+            Input->SetValue(_(""));
+            last = true;
+            checkcount++;
+        }
+        if (checkcount < 19 && History[checkcount] != "")
+        {
+            checkcount++;
+        }
+        hasClicked = true;
+        break;
+    case WXK_UP:
+        if (checkcount > 0)
+        {
+            checkcount--;
+        }
+        last = false;
+        hasClicked = true;
+        break;
+    default:
+        last = false;
+        hasClicked = false;
+        event.Skip();
+    }
+
+    if (hasClicked == true && last != true)
+        Input->SetValue(History[checkcount]);
 }
