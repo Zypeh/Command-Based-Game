@@ -12,6 +12,9 @@
 #include "wx/colour.h"
 #include "wx/gdicmn.h"
 #include "wx/stdpaths.h"
+#include "wx/textentry.h"
+#include "wx/arrstr.h"
+#include "wx/textcompleter.h"
 
 //Announcing Event Handling
 BEGIN_EVENT_TABLE(MainFrame,wxFrame)
@@ -43,6 +46,7 @@ int checkcount = 20;
 bool last = false;
 bool hasClicked = false;
 bool inifocus = false; //check if the Input box was clicked on
+bool isTab = false;
 
 //The main initializer
 void MainFrame::CreateGUIControls()
@@ -64,7 +68,7 @@ void MainFrame::CreateGUIControls()
     wxString status(AutoVersion::STATUS_SHORT);
     Output = new wxTextCtrl(Panel, ID_Output, wxEmptyString, wxPoint(5,5), wxSize(185,89), wxTE_RICH|wxTE_READONLY|wxTE_LEFT|wxTE_MULTILINE, wxDefaultValidator, _("Output"));
     Output->SetMaxLength(0);
-    Output->AppendText(wxT("Welcome to the Text Based Game!\nThis is version " + version + status + ".\nType 'help' to get help.\n"));
+    Output->AppendText(wxT("Welcome to the Command Based Game!\nThis is version " + version + status + ".\nType 'help' to get help.\n"));
     Output->SetFocus();
     MainSizer->Add(Output, 1, wxALIGN_CENTER|wxEXPAND|wxALL, 5);
 
@@ -84,7 +88,7 @@ void MainFrame::CreateGUIControls()
     MenuBar->Append(MenuAbout, _("About"));
     SetMenuBar(MenuBar);
 
-    SetTitle(_("Text Based Game"));
+    SetTitle(_("Command Based Game"));
     SetIcon(wxICON(prog));
 
     LoadFileDialog = new wxFileDialog(this, _("Load game file"), exePath, "", "JSON files (*.json)|*.json", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
@@ -197,6 +201,7 @@ void MainFrame::OnKey(wxKeyEvent& event)
     switch (keycode)
     {
     case WXK_DOWN:
+        isTab = false;
         if (checkcount == 19 && Input->GetValue() != "")
         {
             Input->SetValue(_(""));
@@ -210,6 +215,7 @@ void MainFrame::OnKey(wxKeyEvent& event)
         hasClicked = true;
         break;
     case WXK_UP:
+        isTab = false;
         if (checkcount > 0)
         {
             checkcount--;
@@ -217,7 +223,11 @@ void MainFrame::OnKey(wxKeyEvent& event)
         last = false;
         hasClicked = true;
         break;
+    case WXK_TAB:
+        isTab = true;
+        //Input->AutoComplete(Auto);
     default:
+        isTab = false;
         last = false;
         hasClicked = false;
         event.Skip();
