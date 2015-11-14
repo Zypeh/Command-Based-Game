@@ -11,7 +11,11 @@
 ###Todos:
 - Handling command history
 - Majority of game logic
-- Don't know, maybe Pizzas?
+  * Time system
+  * Inventory system
+  * Combat system
+  * Weather, maybe?
+- Don't know, maybe Pizzas? (delicious)
 
 ###Milestone:
 - Command Line Handling
@@ -23,3 +27,6 @@
 ###Author:
 - Koh Jun Dong
 - Hoe Hao Cheng
+
+
+###### C++ is complex when compared to C#...
