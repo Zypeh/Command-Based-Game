@@ -78,11 +78,12 @@
 			<Add library="liboleaut32.a" />
 			<Add library="libwinspool.a" />
 		</Linker>
+		<Unit filename="GameLogic/InputHandler/CommandList/Commands.h" />
+		<Unit filename="GameLogic/InputHandler/CommandList/Help.cpp" />
+		<Unit filename="GameLogic/InputHandler/commandHandler.cpp" />
+		<Unit filename="GameLogic/InputHandler/commandHandler.h" />
 		<Unit filename="Images/Icon.ico" />
 		<Unit filename="Images/Icon.png" />
-		<Unit filename="InputHandler/CommandList/Commands.h" />
-		<Unit filename="InputHandler/commandHandler.cpp" />
-		<Unit filename="InputHandler/commandHandler.h" />
 		<Unit filename="UX/About.cpp" />
 		<Unit filename="UX/About.h" />
 		<Unit filename="UX/Frame.h" />

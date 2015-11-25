@@ -6,7 +6,7 @@
 #include "../version.h"
 
 //Additional includes goes here
-#include "../InputHandler/commandHandler.h"
+#include "../GameLogic/InputHandler/commandHandler.h"
 
 //Additional wx includes goes here
 #include "wx/colour.h"
