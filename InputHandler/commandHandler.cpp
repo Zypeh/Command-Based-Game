@@ -13,7 +13,10 @@ using namespace std;
 enum String
 {
     StringUndefined,
-    StringValue1
+    Command1,  //help
+    Command2,  //exit
+
+    SCommand1  //player
 };
 
 //Announce the mapping
