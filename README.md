@@ -10,7 +10,9 @@
 ##About this project branch:
 ###Todos:
 - Handling command history
-- Majority of game logic
+- Majority of game logic (importance are sorted ascendingly!)
+  * Player statuses(from health to stamina)
+  * Item system
   * Time system
   * Inventory system
   * Combat system
