@@ -8,6 +8,10 @@
 *"Port" - The C++ port of the game, will merge into master and ultimately replace the C# code with C++ code.
 
 ##About this project branch:
+
+###Why port to C++?
+C# takes a huge amount of RAM (3MB > 1MB) as it needs a runtime (it does, when we decided to port CBG to C++, and still does now. We decided that trading memory off for productivity is unacceptable, as we want this game to run on as much platforms as possible.)
+
 ###Todos:
 - Handling command history
 - Majority of game logic (importance are sorted ascendingly!)
