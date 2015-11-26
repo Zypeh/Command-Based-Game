@@ -10,7 +10,7 @@
 ##About this project branch:
 
 ###Why port to C++?
-C# takes a huge amount of RAM (3MB > 1MB) as it needs a runtime (it does, when we decided to port CBG to C++, and still does now. We decided that trading memory off for productivity is feasible, as we want this game to run on as many platforms as possible.)
+C# takes a huge amount of RAM (3MB > 1MB) as it needs a runtime (it does, when we decided to port CBG to C++, and still does now. We decided that trading memory off for productivity is not feasible, as we want this game to run on as many platforms as possible.)
 
 ###Todos:
 - Handling command history
