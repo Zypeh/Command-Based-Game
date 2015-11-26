@@ -48,6 +48,9 @@ string CheckSubcommands(string input, bool returnSub)
     /* this can be used to return the command string
      * without any subcommands in it. I am lazy, help.
      *
+
+     default returns sub commands
+
      * -hch12907
      */
     size_t found = input.find_first_of(" ");

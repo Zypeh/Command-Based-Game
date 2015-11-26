@@ -82,6 +82,8 @@
 		<Unit filename="GameLogic/InputHandler/CommandList/Help.cpp" />
 		<Unit filename="GameLogic/InputHandler/commandHandler.cpp" />
 		<Unit filename="GameLogic/InputHandler/commandHandler.h" />
+		<Unit filename="GameLogic/PlayerStatus.cpp" />
+		<Unit filename="GameLogic/PlayerStatusHandler.h" />
 		<Unit filename="Images/Icon.ico" />
 		<Unit filename="Images/Icon.png" />
 		<Unit filename="UX/About.cpp" />
