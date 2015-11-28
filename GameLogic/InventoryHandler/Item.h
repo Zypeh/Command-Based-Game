@@ -1,8 +1,11 @@
+#ifndef ITEM
+#define ITEM
+
 struct Item
 {
-    string item_name; // Item name
-    int maximum_stack; // Items per stack
-    unsigned int current_amount; // Current amount player owns
+    string item_name = ""; // Item name
+    int maximum_stack = 0; // Items per stack
+    unsigned int current_amount = 0; // Current amount player owns
 
     bool CompareName(Item item)
     {
@@ -14,12 +17,6 @@ struct Item
     {
         return (current_amount >= maximum_stack)
     }
-
-    void setCurrentAmount(int amount)
-    {
-        current_amount += amount;
-    }
 };
-//EXAMPLES OF DECLARING ITEMS
-Item apple {"apple", 16};
+#endif
 
