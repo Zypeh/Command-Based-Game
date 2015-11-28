@@ -1,5 +1,6 @@
 # Text-Based-Game
 
+<<<<<<< HEAD
 ### Branches
 *"Old" - The first attempt of coding/making this game.
 
@@ -36,3 +37,9 @@ C# takes a huge amount of RAM (3MB > 1MB) as it needs a runtime (it does, when w
 
 
 ###### C++ is complex when compared to C#...
+=======
+## Branches
+* "Old" - My first attempt at coding this thing.
+* "Master" - My current(2nd) attempt at coding this thing.
+* "Port" - The C++ port.
+>>>>>>> refs/remotes/origin/master
