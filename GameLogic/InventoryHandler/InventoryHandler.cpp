@@ -16,10 +16,10 @@ Item player_storage[stacks + 1];
 
 void SortItems()
 {
-    for(i = 0; i < stacks; i++)
+    for(int i = 0; i < stacks; i++)
     {
         Item last_item;
-        if(player_storage[i].item_name == "" && player_storage[i + 1] != "")
+        if(player_storage[i].item_name == "" && player_storage[i + 1].item_name != "")
         {
             player_storage[i] = player_storage[i + 1];
         }
@@ -27,9 +27,9 @@ void SortItems()
         {
             for(int i_1 = i; i_1 < stacks; i_1++)
             {
-                if(player.storage[i_1].item_name != "")
+                if(player_storage[i_1].item_name != "")
                 {
-                    player_storage[i] == player_storage[i_1];
+                    player_storage[i] = player_storage[i_1];
                 }
             }
         }
@@ -51,18 +51,16 @@ void AddItem(Item item, short amount)
                 {
                     if(player_storage[i_1].item_name != "")
                     {
-                        player_storage[i_1] = {item.item_name,
-                                               player_storage[i].current_amount - player_storage[i].maximum_stack,
-                                               player_storage[i].maximum_stack};
+                        player_storage[i_1].item_name = item.item_name;
+                        player_storage[i_1].current_amount = player_storage[i].current_amount - player_storage[i].maximum_stack;
+                        player_storage[i_1].maximum_stack = player_storage[i].maximum_stack;
                     }
                 }
             }
         }
         else if(player_storage[i].item_name == "")
         {
-            player_storage[i_1] = {item.item_name,
-                                   amount,
-                                   item.maximum_stack};
+            player_storage[i].setItem(item.item_name, amount, item.maximum_stack);
         }
     };
 }
@@ -77,7 +75,7 @@ void RemoveItem(Item item, short amount)
         }
         else if(player_storage[i].item_name == item.item_name && ((player_storage[i].current_amount -= amount) < 0))
         {
-            player_storage[i] = {"", 0, 0};
+            player_storage[i].setItem("", 0, 0);
             SortItems();
             for(int i_1 = 0; i_1 < stacks; i_1++)
             {
@@ -88,11 +86,6 @@ void RemoveItem(Item item, short amount)
             }
         }
     }
-}
-
-Item[] ReturnPlayerInventory()
-{
-    return player_storage;
 }
 
 Item ReturnPlayerItem(int slot)

@@ -53,13 +53,16 @@ string CheckSubcommands(string input, bool returnSub)
 
      * -hch12907
      */
+     string mainStr;
+     string subStr;
+
     size_t found = input.find_first_of(" ");
 
-    string mainStr = input.substr(0,found);
+    mainStr = input.substr(0,found);
 
     if (found == 0)
     {
-    string subStr = input.substr(found);
+    subStr = input.substr(found);
     }
 
     return (returnSub ? subStr : mainStr);

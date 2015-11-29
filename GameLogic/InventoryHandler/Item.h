@@ -3,7 +3,7 @@
 
 struct Item
 {
-    string item_name = ""; // Item name
+    std::string item_name = ""; // Item name
     int maximum_stack = 0; // Items per stack
     unsigned int current_amount = 0; // Current amount player owns
 
@@ -15,7 +15,14 @@ struct Item
 
     bool IsStackFull()
     {
-        return (current_amount >= maximum_stack)
+        return (current_amount >= maximum_stack);
+    }
+
+    void setItem(std::string name, int amnt, int stck)
+    {
+        item_name = name;
+        current_amount = amnt;
+        maximum_stack = stck;
     }
 };
 #endif

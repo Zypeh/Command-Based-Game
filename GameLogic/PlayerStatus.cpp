@@ -1,6 +1,6 @@
 #include <iostream>
 
-use namespace std;
+using namespace std;
 
 unsigned short health;
 unsigned short hunger;
