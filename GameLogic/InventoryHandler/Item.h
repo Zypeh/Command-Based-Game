@@ -4,7 +4,7 @@
 struct Item
 {
     std::string item_name = ""; // Item name
-    int maximum_stack = 0; // Items per stack
+    unsigned int maximum_stack = 0; // Items per stack
     unsigned int current_amount = 0; // Current amount player owns
 
     bool CompareName(Item item)
