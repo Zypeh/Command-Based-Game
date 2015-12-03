@@ -11,10 +11,10 @@ using namespace std;
 
 string executeHelp()
 {
-
+    return "This is help.";
 }
 
 string executeExit()
 {
-
+    return "Exiting program. (Of course it isn't.)"
 }
