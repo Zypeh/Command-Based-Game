@@ -41,8 +41,14 @@ void Handler(string * input)
 
     for(Commands cmd : DeclareCommands)
     {
-        if(cmd.command_name == lowercased) *input = cmd.Execute();
-        else *input = "Invalid command.";
+        if(cmd.command_name == lowercased)
+        {
+            *input = cmd.Execute()
+        }
+        else
+        {
+            *input = "Invalid command.";
+        }
     }
 
     return;
