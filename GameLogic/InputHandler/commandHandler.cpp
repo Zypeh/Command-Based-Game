@@ -43,7 +43,7 @@ void Handler(string * input)
     {
         if(cmd.command_name == lowercased)
         {
-            *input = cmd.Execute()
+            *input = cmd.Execute();
         }
         else
         {
