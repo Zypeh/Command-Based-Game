@@ -16,5 +16,5 @@ string executeHelp()
 
 string executeExit()
 {
-    return "Exiting program. (Of course it isn't.)"
+    return "Exiting program. (Of course it isn't.)";
 }
