@@ -27,7 +27,7 @@ void About::CreateGUIControls()
     this->SetSizer(AboutFrameSizer);
     this->SetAutoLayout(true);
 
-    AboutPanel = new wxPanel(this, ID_AboutPanel, wxPoint(0, 0), wxSize(300, 470));
+    AboutPanel = new wxPanel(this, ID_AboutPanel, wxPoint(0, 0), wxSize(310, 470));
     AboutFrameSizer->Add(AboutPanel, 0, wxALIGN_CENTER | wxALL, 0);
 
     AboutSizer = new wxBoxSizer(wxVERTICAL);

@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 					<Add directory="$(#wx)/lib/gcc_lib/mswud" />
 				</Compiler>
@@ -38,6 +39,7 @@
 				<Compiler>
 					<Add option="-fexpensive-optimizations" />
 					<Add option="-O3" />
+					<Add option="-std=c++11" />
 					<Add directory="$(#wx)/lib/gcc_lib/mswu" />
 				</Compiler>
 				<ResourceCompiler>
@@ -79,7 +81,8 @@
 			<Add library="libwinspool.a" />
 		</Linker>
 		<Unit filename="GameLogic/InputHandler/CommandList/Commands.h" />
-		<Unit filename="GameLogic/InputHandler/CommandList/Help.cpp" />
+		<Unit filename="GameLogic/InputHandler/commandDefine.cpp" />
+		<Unit filename="GameLogic/InputHandler/commandDefine.h" />
 		<Unit filename="GameLogic/InputHandler/commandHandler.cpp" />
 		<Unit filename="GameLogic/InputHandler/commandHandler.h" />
 		<Unit filename="GameLogic/InventoryHandler/InventoryHandler.cpp" />
