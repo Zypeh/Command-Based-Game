@@ -80,7 +80,10 @@
 			<Add library="liboleaut32.a" />
 			<Add library="libwinspool.a" />
 		</Linker>
+<<<<<<< HEAD
 		<Unit filename="GameLogic/InputHandler/CommandList/Commands.h" />
+=======
+>>>>>>> origin/master
 		<Unit filename="GameLogic/InputHandler/commandDefine.cpp" />
 		<Unit filename="GameLogic/InputHandler/commandDefine.h" />
 		<Unit filename="GameLogic/InputHandler/commandHandler.cpp" />

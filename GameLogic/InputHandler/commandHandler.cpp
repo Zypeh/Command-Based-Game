@@ -15,6 +15,8 @@ Commands DeclareCommands[2] = //remember to increase the size when you add new c
     { "exit", "", executeExit }
 };
 
+//returns subcommands, can return the main command too
+//default return subcommands.
 string CheckSubcommands(string input, bool returnSub)
 {
     string mainStr;
@@ -39,8 +41,14 @@ void Handler(string * input)
 
     for(Commands cmd : DeclareCommands)
     {
-        if(cmd.command_name == lowercased) *input = cmd.Execute();
-        else *input = "Invalid command.";
+        if(cmd.command_name == lowercased)
+        {
+            *input = cmd.Execute()
+        }
+        else
+        {
+            *input = "Invalid command.";
+        }
     }
 
     return;
