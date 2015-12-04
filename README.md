@@ -5,9 +5,11 @@
 ### Branches
 * "Old" - The first attempt of coding/making this game.
 
-* "Master" - The most stable code of the game. Coded in C#.
+* "Master" - The most stable code of the game. Coded in ~~C#~~ C++.
 
-* "Port" - The C++ port of the game, will merge into master and ultimately replace the C# code with C++ code.
+* ~~"Port" - The C++ port of the game, will merge into master and ultimately replace the C# code with C++ code.~~
+
+* "C#" - The C# version of the game, obsolete.
 
 ===
 
