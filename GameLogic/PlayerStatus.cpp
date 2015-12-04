@@ -8,7 +8,6 @@ unsigned short hunger;
 unsigned short GetStatus(int type)
 {
     /* 0 returns health, 1 returns hunger */
-
     return (type == 0 ? health : hunger);
 }
 

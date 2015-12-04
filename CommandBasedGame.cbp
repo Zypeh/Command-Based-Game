@@ -80,10 +80,6 @@
 			<Add library="liboleaut32.a" />
 			<Add library="libwinspool.a" />
 		</Linker>
-<<<<<<< HEAD
-		<Unit filename="GameLogic/InputHandler/CommandList/Commands.h" />
-=======
->>>>>>> origin/master
 		<Unit filename="GameLogic/InputHandler/commandDefine.cpp" />
 		<Unit filename="GameLogic/InputHandler/commandDefine.h" />
 		<Unit filename="GameLogic/InputHandler/commandHandler.cpp" />
@@ -93,12 +89,14 @@
 		<Unit filename="GameLogic/InventoryHandler/Item.h" />
 		<Unit filename="GameLogic/PlayerStatus.cpp" />
 		<Unit filename="GameLogic/PlayerStatusHandler.h" />
+		<Unit filename="GameplayLogic/WorldHandler/WorldGen.cpp" />
 		<Unit filename="Images/Icon.ico" />
 		<Unit filename="Images/Icon.png" />
 		<Unit filename="UX/About.cpp" />
 		<Unit filename="UX/About.h" />
 		<Unit filename="UX/Frame.h" />
 		<Unit filename="UX/main.cpp" />
+		<Unit filename="common/randomizer.cpp" />
 		<Unit filename="init.cpp" />
 		<Unit filename="main.rc">
 			<Option compilerVar="WINDRES" />
