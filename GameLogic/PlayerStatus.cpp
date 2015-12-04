@@ -12,15 +12,15 @@ unsigned short GetStatus(int type)
     return (type == 0 ? health : hunger);
 }
 
-void SetStatus(int type, unsigned short amount)
+void ModStatus(int type, short amount)
 {
     if (type == 0)
     {
         health += amount;
     }
-    else
+    else if(type == 1)
     {
-        health -= amount;
+        hunger += amount;
     }
 }
 
