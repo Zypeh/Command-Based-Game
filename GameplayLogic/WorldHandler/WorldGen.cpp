@@ -23,6 +23,16 @@ void generateWorld()
     nearCave = randomBool();
 }
 
+void modifyWorld(string type, int amount)
+{
+    if(type == "grass") { grass += amount; }
+    else if(type == "tree") { tree += amount; }
+    else if(type == "cow") { cow += amount; }
+    else if (type == "chicken") { chicken += amount; }
+    else if (type == "pig") { pig += amount; }
+    else if (type == "sheep") { sheep += amount; }
+}
+
 int returnWorldInfo(string type)
 {
     if(type == "grass") { return grass; }
