@@ -87,8 +87,8 @@
 		<Unit filename="GameLogic/InventoryHandler/InventoryHandler.cpp" />
 		<Unit filename="GameLogic/InventoryHandler/InventoryHandler.h" />
 		<Unit filename="GameLogic/InventoryHandler/Item.h" />
-		<Unit filename="GameLogic/PlayerStatus.cpp" />
-		<Unit filename="GameLogic/PlayerStatusHandler.h" />
+		<Unit filename="GameLogic/PlayerStatus/PlayerStatus.cpp" />
+		<Unit filename="GameLogic/PlayerStatus/PlayerStatusHandler.h" />
 		<Unit filename="GameplayLogic/WorldHandler/WorldGen.cpp" />
 		<Unit filename="Images/Icon.ico" />
 		<Unit filename="Images/Icon.png" />
@@ -97,6 +97,7 @@
 		<Unit filename="UX/Frame.h" />
 		<Unit filename="UX/main.cpp" />
 		<Unit filename="common/randomizer.cpp" />
+		<Unit filename="common/randomizer.h" />
 		<Unit filename="init.cpp" />
 		<Unit filename="main.rc">
 			<Option compilerVar="WINDRES" />
