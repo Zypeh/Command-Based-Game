@@ -22,11 +22,3 @@ void ModStatus(int type, short amount)
         hunger += amount;
     }
 }
-
-void ReturnInventory()
-{
-   /* whether move this function to
-    * InventoryHandler or leave it
-    * here -hch12907
-    */
-}
