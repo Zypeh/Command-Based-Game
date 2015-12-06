@@ -42,4 +42,5 @@ int returnWorldInfo(string type)
     else if (type == "pig") { return pig; }
     else if (type == "sheep") { return sheep; }
     else { return -1;}
+
 }
