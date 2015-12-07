@@ -7,7 +7,7 @@
 
 * "Master" - The most stable code of the game. Coded in ~~C#~~ C++.
 
-* ~~"Port" - The C++ port of the game, will merge into master and ultimately replace the C# code with C++ code.~~
+* "Port" - ~~The C++ port of the game, will merge into master and ultimately replace the C# code with C++ code.~~ </br> Merged into master. Bye, port!
 
 * "C#" - The C# version of the game, obsolete.
 
