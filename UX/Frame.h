@@ -8,7 +8,7 @@
 #include <wx/wx.h>
 #include <wx/frame.h>
 #else
-#include <wx/wxprec.h>
+include <wx/wxprec.h>
 #endif // WX_PRECOMP
 
 //All the necessary "components"
