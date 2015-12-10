@@ -79,6 +79,8 @@
 			<Add library="liboleaut32.a" />
 			<Add library="libwinspool.a" />
 		</Linker>
+		<Unit filename="GameLogic/CombatHandler/Combat.cpp" />
+		<Unit filename="GameLogic/CombatHandler/Combat.h" />
 		<Unit filename="GameLogic/InputHandler/commandDefine.cpp" />
 		<Unit filename="GameLogic/InputHandler/commandDefine.h" />
 		<Unit filename="GameLogic/InputHandler/commandHandler.cpp" />
@@ -87,6 +89,8 @@
 		<Unit filename="GameLogic/InventoryHandler/InventoryHandler.h" />
 		<Unit filename="GameLogic/InventoryHandler/Item.h" />
 		<Unit filename="GameLogic/NPCHandler/NPC.h" />
+		<Unit filename="GameLogic/NPCHandler/NPCEvent.cpp" />
+		<Unit filename="GameLogic/NPCHandler/NPCEvent.h" />
 		<Unit filename="GameLogic/PlayerHandler/PlayerStatus.cpp" />
 		<Unit filename="GameLogic/PlayerHandler/PlayerStatusHandler.h" />
 		<Unit filename="GameplayLogic/WorldHandler/WorldGen.cpp" />

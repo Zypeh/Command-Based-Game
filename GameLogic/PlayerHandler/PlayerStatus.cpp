@@ -4,6 +4,7 @@ using namespace std;
 
 unsigned short health;
 unsigned short hunger;
+unsigned int resistance;
 
 unsigned short GetStatus(int type)
 {
@@ -21,4 +22,9 @@ void ModStatus(int type, short amount)
     {
         hunger += amount;
     }
+}
+
+void SetResistance(int amount)
+{
+    resistance = amount;
 }
