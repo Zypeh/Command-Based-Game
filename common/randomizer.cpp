@@ -10,8 +10,8 @@ int randomInt(int x, int y)
 	return distribution(generator);
 }
 
-bool randomBool()
+bool randomBool(int chance)
 {
-    uniform_int_distribution<int> distribution(0,1);
-    return distribution(generator);
+    uniform_int_distribution<int> distribution(1, 100);
+    return (distribution(generator) <= chance);
 }
