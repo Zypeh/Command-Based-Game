@@ -4,27 +4,36 @@ using namespace std;
 
 unsigned short health;
 unsigned short hunger;
-unsigned int resistance;
+unsigned short resistance;
 
-unsigned short GetStatus(int type)
+unsigned short returnPlayerStatus(string type)
 {
-    /* 0 returns health, 1 returns hunger */
-    return (type == 0 ? health : hunger);
+    if(type == "health")
+    {
+        return health;
+    }
+    else if(type == "hunger")
+    {
+        return hunger;
+    }
+    else if(type == "resistance")
+    {
+        return resistance;
+    }
+
 }
 
-void ModStatus(int type, short amount)
+void ModPlayerHealth(short amount)
 {
-    if (type == 0)
-    {
-        health += amount;
-    }
-    else if(type == 1)
-    {
-        hunger += amount;
-    }
+    health += amount;
 }
 
-void SetResistance(int amount)
+void ModPlayerHunger(short amount)
+{
+    hunger += amount;
+}
+
+void SetPlayerResistance(short amount)
 {
     resistance = amount;
 }
