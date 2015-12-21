@@ -9,18 +9,17 @@ using namespace std;
 void Attack(NPC npc, Item tool)
 {
     int randomDamage;
-
-    if(randomBool)
+    if(randomBool())
     {
         randomDamage = randomInt(-2, 2);
     }
 
-    npc.ModHealth((tool.item_attackdamage + randomDamage) - npc.damage_resistance);
+    //npc.ModHealth((tool.properties + randomDamage) - npc.damage_resistance);
 }
 
-void EnemyAttack()
+void EnemyAttack(NPC npc)
 {
     int randomResistance = randomInt(-3, 3);
 
-    ModStatus(0, npc.attack_damage + randomResistance);
+    ModPlayerHealth(npc.attack_damage + randomResistance);
 }
