@@ -1,11 +1,10 @@
 #ifndef ITEM
 #define ITEM
 
-/*
 #include <map>
 #include <array>
 
-
+/*
 struct ItemProperty
 {
     std::string property_name;
@@ -21,6 +20,7 @@ struct Item
 //    ItemProperty properties[];
     unsigned int maximum_stack = 0; // Maximum items per stack
     unsigned int current_amount = 0; // Current amount player owns
+    std::array<std::map<string, int> , 10> properties; //temporarily 10 elements only
 
     bool CompareName(Item item)
     {
