@@ -57,6 +57,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Cmake generated
+CMakeFiles
+cmake_install.cmake
+
 # Windows
 # =========================
 

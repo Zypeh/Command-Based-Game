@@ -20,6 +20,18 @@ C# takes a huge amount of RAM (3MB > 1MB) as it needs a runtime (it does, when w
 
 ===
 
+###Build
+
+##Prerequisites
+* cmake
+
+##Build
+Run these commands at the directory, this make require _cmake_ .
+```sh
+$ cmake .
+$ make
+```
+
 ###Todos:
 
 - Majority of game logic (importance are sorted ascendingly!)
@@ -43,6 +55,7 @@ C# takes a huge amount of RAM (3MB > 1MB) as it needs a runtime (it does, when w
 ###Author:
 - Koh Jun Dong
 - Hoe Hao Cheng
+- Zypeh <zypeh.geek@gmail.com>
 
 =======
 ###### C++ is complex when compared to C#...
